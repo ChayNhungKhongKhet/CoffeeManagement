@@ -132,11 +132,12 @@ public class Coffee_management_general extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 536));
 
-        jPanel1.setBackground(new java.awt.Color(69, 32, 16));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        JlbEmloyee_manager.setBackground(new java.awt.Color(20, 20, 19));
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+
+        JlbEmloyee_manager.setBackground(new java.awt.Color(255, 255, 255));
         JlbEmloyee_manager.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        JlbEmloyee_manager.setForeground(new java.awt.Color(255, 255, 255));
         JlbEmloyee_manager.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JlbEmloyee_manager.setText("QUẢN LÝ NHÂN VIÊN ");
         JlbEmloyee_manager.setToolTipText("");
@@ -147,9 +148,8 @@ public class Coffee_management_general extends javax.swing.JFrame {
             }
         });
 
-        JlbTable_manager.setBackground(new java.awt.Color(20, 20, 19));
+        JlbTable_manager.setBackground(new java.awt.Color(255, 255, 255));
         JlbTable_manager.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        JlbTable_manager.setForeground(new java.awt.Color(255, 255, 255));
         JlbTable_manager.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JlbTable_manager.setText("QUẢN LÝ BÀN ");
         JlbTable_manager.setToolTipText("");
@@ -160,9 +160,8 @@ public class Coffee_management_general extends javax.swing.JFrame {
             }
         });
 
-        JlbMenu_manager.setBackground(new java.awt.Color(20, 20, 19));
+        JlbMenu_manager.setBackground(new java.awt.Color(255, 255, 255));
         JlbMenu_manager.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        JlbMenu_manager.setForeground(new java.awt.Color(255, 255, 255));
         JlbMenu_manager.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JlbMenu_manager.setText("QUẢN LÝ MENU");
         JlbMenu_manager.setToolTipText("");
@@ -173,9 +172,8 @@ public class Coffee_management_general extends javax.swing.JFrame {
             }
         });
 
-        JlbAccount_manager.setBackground(new java.awt.Color(20, 20, 19));
+        JlbAccount_manager.setBackground(new java.awt.Color(255, 255, 255));
         JlbAccount_manager.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        JlbAccount_manager.setForeground(new java.awt.Color(255, 255, 255));
         JlbAccount_manager.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JlbAccount_manager.setText("QUẢN LÝ TÀI KHOẢN");
         JlbAccount_manager.setToolTipText("");
@@ -215,7 +213,7 @@ public class Coffee_management_general extends javax.swing.JFrame {
 
         jPanel3.setLayout(new java.awt.CardLayout());
 
-        Jpntable_Manager.setBackground(new java.awt.Color(69, 32, 16));
+        Jpntable_Manager.setBackground(new java.awt.Color(102, 102, 102));
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
