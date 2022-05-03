@@ -51,9 +51,9 @@ public class Coffee_management_general extends javax.swing.JFrame {
     public void lableListIsSelected( int index){
         for (int i=0 ;i < listlabel.size(); i++){
             if(index == i)
-                listlabel.get(i).setBackground(Color.red);
+                listlabel.get(i).setBackground(Color.gray);
             else
-                listlabel.get(i).setBackground(Color.blue);
+                listlabel.get(i).setBackground(Color.white);
         }   
     }
     
@@ -381,7 +381,7 @@ public class Coffee_management_general extends javax.swing.JFrame {
                         .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(Jpntable_ManagerLayout.createSequentialGroup()
                         .addGap(94, 94, 94)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)))
                 .addGap(71, 71, 71)
                 .addGroup(Jpntable_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Jpntable_ManagerLayout.createSequentialGroup()
@@ -539,7 +539,7 @@ public class Coffee_management_general extends javax.swing.JFrame {
                         .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(JpnMenu_ManagerLayout.createSequentialGroup()
                         .addGap(94, 94, 94)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)))
                 .addGap(71, 71, 71)
                 .addGroup(JpnMenu_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JpnMenu_ManagerLayout.createSequentialGroup()
@@ -693,7 +693,7 @@ public class Coffee_management_general extends javax.swing.JFrame {
                 .addGroup(JpnAccount_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JpnAccount_ManagerLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE))
                     .addGroup(JpnAccount_ManagerLayout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -853,7 +853,7 @@ public class Coffee_management_general extends javax.swing.JFrame {
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(JpnEmployee_ManagerLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)))
                 .addGap(71, 71, 71)
                 .addGroup(JpnEmployee_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JpnEmployee_ManagerLayout.createSequentialGroup()
