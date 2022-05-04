@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.java.coffee_mangement.view;
+package com.java.coffee_management.view;
 
 /**
  *
@@ -57,9 +57,9 @@ public class Menu_Managerment extends javax.swing.JFrame {
         PanelNorth338.setBackground(new java.awt.Color(69, 32, 16));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_mangement/image/menu_managerment.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/menu_managerment_338.png"))); // NOI18N
         jLabel3.setText("QUẢN LÝ THỰC ĐƠN");
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0), 2));
         jLabel3.setOpaque(true);
@@ -67,7 +67,7 @@ public class Menu_Managerment extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_mangement/image/cup_drink.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/cup_drink_338.png"))); // NOI18N
         jLabel1.setText("Nhóm món:");
 
         cbbDishGroup338.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -86,7 +86,7 @@ public class Menu_Managerment extends javax.swing.JFrame {
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_mangement/image/search_32.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/search_32_338.png"))); // NOI18N
         jLabel4.setText("Tìm kiếm: ");
         jLabel4.setToolTipText("");
 
@@ -97,7 +97,7 @@ public class Menu_Managerment extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_mangement/image/cff_220.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/cff_220_338.png"))); // NOI18N
 
         javax.swing.GroupLayout PanelNorth338Layout = new javax.swing.GroupLayout(PanelNorth338);
         PanelNorth338.setLayout(PanelNorth338Layout);
@@ -105,39 +105,35 @@ public class Menu_Managerment extends javax.swing.JFrame {
             PanelNorth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelNorth338Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addGroup(PanelNorth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PanelNorth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(PanelNorth338Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbbDishGroup338, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cbbDishGroup338, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtSearchMenu338, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
         PanelNorth338Layout.setVerticalGroup(
             PanelNorth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelNorth338Layout.createSequentialGroup()
-                .addGroup(PanelNorth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelNorth338Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jLabel3)
-                        .addGap(6, 6, 6)
-                        .addGroup(PanelNorth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(PanelNorth338Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(cbbDishGroup338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap()
+                .addGroup(PanelNorth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelNorth338Layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelNorth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtSearchMenu338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))))
+                            .addComponent(cbbDishGroup338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel4)
+                            .addComponent(txtSearchMenu338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(8, 8, 8)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -176,15 +172,15 @@ public class Menu_Managerment extends javax.swing.JFrame {
         PanelCenter338.setLayout(PanelCenter338Layout);
         PanelCenter338Layout.setHorizontalGroup(
             PanelCenter338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 994, Short.MAX_VALUE)
+            .addGap(0, 995, Short.MAX_VALUE)
             .addGroup(PanelCenter338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 832, Short.MAX_VALUE))
         );
         PanelCenter338Layout.setVerticalGroup(
             PanelCenter338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 326, Short.MAX_VALUE)
+            .addGap(0, 369, Short.MAX_VALUE)
             .addGroup(PanelCenter338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
         );
 
         PanelSouth338.setBackground(new java.awt.Color(69, 32, 16));
@@ -192,57 +188,40 @@ public class Menu_Managerment extends javax.swing.JFrame {
         jLabel5.setBackground(new java.awt.Color(69, 32, 16));
         jLabel5.setFont(new java.awt.Font("VNI-Park", 1, 48)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("YMach Cafe");
+        jLabel5.setText("YMach Coffee");
 
         jLabel10.setBackground(new java.awt.Color(69, 32, 16));
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_mangement/image/logo_130.png"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/logo_130_338.png"))); // NOI18N
         jLabel10.setOpaque(true);
 
         jLabel7.setBackground(new java.awt.Color(69, 32, 16));
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_mangement/image/cup_110.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/cup_110.png"))); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(69, 32, 16));
 
         btnDeleteDish338.setBackground(new java.awt.Color(255, 255, 255));
         btnDeleteDish338.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnDeleteDish338.setForeground(new java.awt.Color(51, 0, 51));
-        btnDeleteDish338.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_mangement/image/file_delete.png"))); // NOI18N
+        btnDeleteDish338.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/file_delete_338.png"))); // NOI18N
         btnDeleteDish338.setText("XÓA");
         btnDeleteDish338.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         btnDeleteDish338.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnDeleteDish338.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteDish338ActionPerformed(evt);
-            }
-        });
         jPanel1.add(btnDeleteDish338);
 
         btnEditDish338.setBackground(new java.awt.Color(255, 255, 255));
         btnEditDish338.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnEditDish338.setForeground(new java.awt.Color(51, 0, 51));
-        btnEditDish338.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_mangement/image/document_edit.png"))); // NOI18N
+        btnEditDish338.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/document_edit_338.png"))); // NOI18N
         btnEditDish338.setText("SỬA");
         btnEditDish338.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         btnEditDish338.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnEditDish338.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditDish338ActionPerformed(evt);
-            }
-        });
         jPanel1.add(btnEditDish338);
 
         btnAddDish338.setBackground(new java.awt.Color(255, 255, 255));
         btnAddDish338.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnAddDish338.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_mangement/image/file_add.png"))); // NOI18N
+        btnAddDish338.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/file_add_338.png"))); // NOI18N
         btnAddDish338.setText("THÊM");
         btnAddDish338.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         btnAddDish338.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnAddDish338.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddDish338ActionPerformed(evt);
-            }
-        });
         jPanel1.add(btnAddDish338);
 
         javax.swing.GroupLayout PanelSouth338Layout = new javax.swing.GroupLayout(PanelSouth338);
@@ -252,8 +231,8 @@ public class Menu_Managerment extends javax.swing.JFrame {
             .addGroup(PanelSouth338Layout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
-                .addGap(294, 294, 294)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(286, 286, 286)
+                .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -264,14 +243,14 @@ public class Menu_Managerment extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(PanelSouth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelSouth338Layout.createSequentialGroup()
                         .addGroup(PanelSouth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(PanelSouth338Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(13, 13, 13))))
+                                .addGap(21, 21, 21)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout PanelAll338Layout = new javax.swing.GroupLayout(PanelAll338);
@@ -285,12 +264,11 @@ public class Menu_Managerment extends javax.swing.JFrame {
         PanelAll338Layout.setVerticalGroup(
             PanelAll338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAll338Layout.createSequentialGroup()
-                .addComponent(PanelNorth338, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(PanelNorth338, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(PanelCenter338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(PanelSouth338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addComponent(PanelSouth338, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -323,19 +301,6 @@ public class Menu_Managerment extends javax.swing.JFrame {
     private void tbDish338MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbDish338MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_tbDish338MouseClicked
-
-    private void btnAddDish338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDish338ActionPerformed
-
-    }//GEN-LAST:event_btnAddDish338ActionPerformed
-
-    private void btnEditDish338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditDish338ActionPerformed
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditDish338ActionPerformed
-
-    private void btnDeleteDish338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteDish338ActionPerformed
-
-    }//GEN-LAST:event_btnDeleteDish338ActionPerformed
 
     /**
      * @param args the command line arguments

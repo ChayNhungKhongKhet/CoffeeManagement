@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.java.coffee_mangement.view;
+package com.java.coffee_management.view;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -67,7 +67,7 @@ public class Edit_Menu extends javax.swing.JFrame {
 
         btnConfirm338.setBackground(new java.awt.Color(255, 255, 255));
         btnConfirm338.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnConfirm338.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_mangement/image/apply-icon.png"))); // NOI18N
+        btnConfirm338.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/apply-icon_338.png"))); // NOI18N
         btnConfirm338.setText("XÁC NHẬN");
         btnConfirm338.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,7 +88,7 @@ public class Edit_Menu extends javax.swing.JFrame {
 
         lblten.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblten.setForeground(new java.awt.Color(255, 255, 255));
-        lblten.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_mangement/image/hp-notepad-pencil-icon.png"))); // NOI18N
+        lblten.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/hp-notepad-pencil-icon.png"))); // NOI18N
         lblten.setText("SỬA MÓN");
 
         lbUnit338.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -97,7 +97,7 @@ public class Edit_Menu extends javax.swing.JFrame {
 
         btnCancel338.setBackground(new java.awt.Color(255, 255, 255));
         btnCancel338.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnCancel338.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_mangement/image/Error-Symbol-icon.png"))); // NOI18N
+        btnCancel338.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/Error-Symbol-icon.png"))); // NOI18N
         btnCancel338.setText("HỦY");
         btnCancel338.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,7 +143,7 @@ public class Edit_Menu extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(PanelEditMenu338Layout.createSequentialGroup()
                         .addComponent(btnConfirm338)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                         .addComponent(btnCancel338, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29))))
             .addGroup(PanelEditMenu338Layout.createSequentialGroup()
