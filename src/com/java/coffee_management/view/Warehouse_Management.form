@@ -74,9 +74,9 @@
                                           <Component id="jTextField10" min="-2" pref="131" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
                                           <Component id="jTextField11" min="-2" pref="132" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                           <Component id="jButton3" min="-2" pref="135" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -446,7 +446,7 @@
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/java/coffee_management/icon/Timkiem.png"/>
+              <Image iconType="3" name="/com/java/coffee_management/image/Timkiem.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="M&#xe3; NV"/>
           </Properties>
@@ -457,7 +457,7 @@
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/java/coffee_management/icon/Timkiem.png"/>
+              <Image iconType="3" name="/com/java/coffee_management/image/Timkiem.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="M&#xe3; PN"/>
           </Properties>
@@ -477,7 +477,7 @@
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/java/coffee_management/icon/Timkiem.png"/>
+              <Image iconType="3" name="/com/java/coffee_management/image/Timkiem.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="M&#xe3; NL"/>
           </Properties>
@@ -491,10 +491,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="jButton4" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButton6" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton6" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -521,7 +519,7 @@
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/java/coffee_management/icon/Them.png"/>
+                  <Image iconType="3" name="/com/java/coffee_management/image/Them.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
               </Properties>
@@ -532,7 +530,7 @@
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/java/coffee_management/icon/Sua.png"/>
+                  <Image iconType="3" name="/com/java/coffee_management/image/Sua.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
               </Properties>
@@ -543,7 +541,7 @@
                   <Font name="Tahoma" size="14" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/java/coffee_management/icon/Lammoi.png"/>
+                  <Image iconType="3" name="/com/java/coffee_management/image/Lammoi.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="L&#xe0;m m&#x1edb;i"/>
               </Properties>
