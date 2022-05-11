@@ -8,12 +8,12 @@ package com.java.coffee_management.view;
  *
  * @author asus
  */
-public class WareHouse_Managerment extends javax.swing.JFrame {
+public class WareHouse_Manager extends javax.swing.JFrame {
 
     /**
      * Creates new form WareHouse_Managerment
      */
-    public WareHouse_Managerment() {
+    public WareHouse_Manager() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -38,6 +38,7 @@ public class WareHouse_Managerment extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         dateChooser2 = new com.toedter.calendar.JDateChooser();
         btnWareH338 = new javax.swing.JButton();
+        btnExcelWare338 = new javax.swing.JButton();
         PanelCenter338 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbSales338 = new javax.swing.JTable();
@@ -103,6 +104,16 @@ public class WareHouse_Managerment extends javax.swing.JFrame {
             }
         });
 
+        btnExcelWare338.setBackground(new java.awt.Color(0, 255, 255));
+        btnExcelWare338.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnExcelWare338.setText("Xuất Excel");
+        btnExcelWare338.setBorder(null);
+        btnExcelWare338.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcelWare338ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelNorth338Layout = new javax.swing.GroupLayout(PanelNorth338);
         PanelNorth338.setLayout(PanelNorth338Layout);
         PanelNorth338Layout.setHorizontalGroup(
@@ -111,14 +122,13 @@ public class WareHouse_Managerment extends javax.swing.JFrame {
                 .addGroup(PanelNorth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelNorth338Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelNorth338Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cbbDishGroup338, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(dateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -126,12 +136,13 @@ public class WareHouse_Managerment extends javax.swing.JFrame {
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(dateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(12, 12, 12)
-                .addComponent(btnWareH338, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnWareH338, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(26, 26, 26)
+                .addComponent(btnExcelWare338, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel6)
-                .addGap(22, 22, 22))
+                .addContainerGap())
         );
         PanelNorth338Layout.setVerticalGroup(
             PanelNorth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,12 +156,14 @@ public class WareHouse_Managerment extends javax.swing.JFrame {
                             .addComponent(cbbDishGroup338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1)))
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelNorth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnWareH338, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnExcelWare338, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelNorth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(dateChooser2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnWareH338, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(dateChooser2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -320,6 +333,10 @@ public class WareHouse_Managerment extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnWareH338ActionPerformed
 
+    private void btnExcelWare338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcelWare338ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExcelWare338ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -337,20 +354,21 @@ public class WareHouse_Managerment extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(WareHouse_Managerment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(WareHouse_Manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(WareHouse_Managerment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(WareHouse_Manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(WareHouse_Managerment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(WareHouse_Manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(WareHouse_Managerment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(WareHouse_Manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new WareHouse_Managerment().setVisible(true);
+                new WareHouse_Manager().setVisible(true);
             }
         });
     }
@@ -360,6 +378,7 @@ public class WareHouse_Managerment extends javax.swing.JFrame {
     private javax.swing.JPanel PanelCenter338;
     private javax.swing.JPanel PanelNorth338;
     private javax.swing.JPanel PanelSouth338;
+    private javax.swing.JButton btnExcelWare338;
     private javax.swing.JButton btnWareH338;
     private javax.swing.JComboBox<String> cbbDishGroup338;
     private com.toedter.calendar.JDateChooser dateChooser1;

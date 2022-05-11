@@ -152,7 +152,7 @@ public class AddMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        System.exit(0);
+        this.setVisible(false);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     /**

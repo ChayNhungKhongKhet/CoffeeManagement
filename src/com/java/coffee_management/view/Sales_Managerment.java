@@ -38,6 +38,7 @@ public class Sales_Managerment extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         dateChooser2 = new com.toedter.calendar.JDateChooser();
         btnSales338 = new javax.swing.JButton();
+        btnXuatExcelSale338 = new javax.swing.JButton();
         PanelCenter338 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbSales338 = new javax.swing.JTable();
@@ -103,6 +104,16 @@ public class Sales_Managerment extends javax.swing.JFrame {
             }
         });
 
+        btnXuatExcelSale338.setBackground(new java.awt.Color(0, 255, 255));
+        btnXuatExcelSale338.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnXuatExcelSale338.setText("XUẤT EXCEL");
+        btnXuatExcelSale338.setBorder(null);
+        btnXuatExcelSale338.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXuatExcelSale338ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelNorth338Layout = new javax.swing.GroupLayout(PanelNorth338);
         PanelNorth338.setLayout(PanelNorth338Layout);
         PanelNorth338Layout.setHorizontalGroup(
@@ -111,14 +122,13 @@ public class Sales_Managerment extends javax.swing.JFrame {
                 .addGroup(PanelNorth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelNorth338Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PanelNorth338Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cbbDishGroup338, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(dateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -126,11 +136,13 @@ public class Sales_Managerment extends javax.swing.JFrame {
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(dateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(btnSales338, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnXuatExcelSale338, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
-                .addGap(22, 22, 22))
+                .addContainerGap())
         );
         PanelNorth338Layout.setVerticalGroup(
             PanelNorth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,12 +156,14 @@ public class Sales_Managerment extends javax.swing.JFrame {
                             .addComponent(cbbDishGroup338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1)))
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelNorth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnSales338, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnXuatExcelSale338, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(dateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelNorth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(dateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnSales338, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(dateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -238,7 +252,7 @@ public class Sales_Managerment extends javax.swing.JFrame {
             PanelSouth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelSouth338Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
                 .addGap(303, 303, 303)
                 .addGroup(PanelSouth338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(PanelSouth338Layout.createSequentialGroup()
@@ -319,6 +333,10 @@ public class Sales_Managerment extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSales338ActionPerformed
 
+    private void btnXuatExcelSale338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXuatExcelSale338ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnXuatExcelSale338ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -360,6 +378,7 @@ public class Sales_Managerment extends javax.swing.JFrame {
     private javax.swing.JPanel PanelNorth338;
     private javax.swing.JPanel PanelSouth338;
     private javax.swing.JButton btnSales338;
+    private javax.swing.JButton btnXuatExcelSale338;
     private javax.swing.JComboBox<String> cbbDishGroup338;
     private com.toedter.calendar.JDateChooser dateChooser1;
     private com.toedter.calendar.JDateChooser dateChooser2;
