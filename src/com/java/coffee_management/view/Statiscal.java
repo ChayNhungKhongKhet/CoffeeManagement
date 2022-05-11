@@ -1,36 +1,33 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-
 package com.java.coffee_management.view;
 
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
  *
- * @author ASUS
+ * @author asus
  */
-public class Statics_General extends javax.swing.JFrame {
-
-    /**
-     * Creates new form demo
-     */
+public class Statiscal extends javax.swing.JPanel {
     List<JPanel> listpanel =new ArrayList<>();
-    List<JButton> listbutton =new ArrayList<>();
-    public Statics_General() {
+    List<JButton> listbutton =new ArrayList<>();    
+    /**
+     * Creates new form Statiscal
+     */
+    public Statiscal() {
         initComponents();
-        setLocationRelativeTo(null);
         panelListManager();
         panelIsSelected(0);
         buttonListManager();
         buttonListIsSelected(0);
     }
+    
     public void panelListManager(){
         listpanel.add(PanelBill338);
         listpanel.add(PanelSalary338);
@@ -69,7 +66,6 @@ public class Statics_General extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFrame1 = new javax.swing.JFrame();
         PanelAll338 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         PanelMenu338 = new javax.swing.JPanel();
@@ -178,20 +174,6 @@ public class Statics_General extends javax.swing.JFrame {
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         lbSalesMoney338 = new javax.swing.JLabel();
-
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
         PanelAll338.setPreferredSize(new java.awt.Dimension(1038, 486));
 
@@ -502,7 +484,7 @@ public class Statics_General extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 555, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(1, 1, 1))
         );
@@ -1080,7 +1062,7 @@ public class Statics_General extends javax.swing.JFrame {
         PanelCenter339.setLayout(PanelCenter339Layout);
         PanelCenter339Layout.setHorizontalGroup(
             PanelCenter339Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1167, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
             .addGroup(PanelCenter339Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelCenter339Layout.createSequentialGroup()
                     .addContainerGap()
@@ -1497,9 +1479,26 @@ public class Statics_General extends javax.swing.JFrame {
             .addComponent(PanelDetails338, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        getContentPane().add(PanelAll338);
-
-        pack();
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1521, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(PanelAll338, javax.swing.GroupLayout.PREFERRED_SIZE, 1521, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 887, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(PanelAll338, javax.swing.GroupLayout.PREFERRED_SIZE, 887, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnStatisSalary338MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnStatisSalary338MouseClicked
@@ -1531,6 +1530,31 @@ public class Statics_General extends javax.swing.JFrame {
         //SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRevenue338ActionPerformed
+
+    private void btnSeeDetail338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeeDetail338ActionPerformed
+        // TODO add your handling code here:
+        DetailBill detalil = new DetailBill();
+        detalil.setVisible(true);
+    }//GEN-LAST:event_btnSeeDetail338ActionPerformed
+
+    private void cbbSalarySort307ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbbSalarySort307ItemStateChanged
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbbSalarySort307ItemStateChanged
+
+    private void btnSalary307ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalary307ActionPerformed
+
+        //SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalary307ActionPerformed
+
+    private void btnXuatExcelSalary307ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXuatExcelSalary307ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnXuatExcelSalary307ActionPerformed
+
+    private void tbSalary307MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbSalary307MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbSalary307MouseClicked
 
     private void cbbDishGroup338ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbbDishGroup338ItemStateChanged
 
@@ -1570,66 +1594,6 @@ public class Statics_General extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tbSales338MouseClicked
 
-    private void btnSeeDetail338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeeDetail338ActionPerformed
-        // TODO add your handling code here:
-        DetailBill detalil = new DetailBill();
-        detalil.setVisible(true);
-    }//GEN-LAST:event_btnSeeDetail338ActionPerformed
-
-    private void cbbSalarySort307ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbbSalarySort307ItemStateChanged
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbbSalarySort307ItemStateChanged
-
-    private void btnSalary307ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalary307ActionPerformed
-
-        //SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSalary307ActionPerformed
-
-    private void btnXuatExcelSalary307ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXuatExcelSalary307ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnXuatExcelSalary307ActionPerformed
-
-    private void tbSalary307MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbSalary307MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tbSalary307MouseClicked
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Statics_General.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Statics_General.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Statics_General.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Statics_General.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new Statics_General().setVisible(true);
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelAll338;
@@ -1676,7 +1640,6 @@ public class Statics_General extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser dateChooser5;
     private com.toedter.calendar.JDateChooser dateChooser6;
     private com.toedter.calendar.JDateChooser dateChooser9;
-    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1742,6 +1705,4 @@ public class Statics_General extends javax.swing.JFrame {
     private javax.swing.JTable tblDish338;
     private javax.swing.JTable tblReceipt338;
     // End of variables declaration//GEN-END:variables
-
-   
 }

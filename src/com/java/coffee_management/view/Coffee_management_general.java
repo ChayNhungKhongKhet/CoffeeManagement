@@ -14,8 +14,8 @@ import javax.swing.JPanel;
  * @author ASUS
  */
 public class Coffee_management_general extends javax.swing.JFrame {
-    List<JPanel> listpanel =new ArrayList<>();
-    List<JLabel> listlabel =new ArrayList<>();
+    List<JPanel> listPanelManage =new ArrayList<>();
+    List<JLabel> listLabelManage =new ArrayList<>();
     /**
      * Creates new form Coffee_management_general
      */
@@ -24,36 +24,36 @@ public class Coffee_management_general extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         panelListManager();
         labelListManager();
-        lableIsSelected(0);
+        lableIsSelectedManage(0);
         lableListIsSelected(0);
     }
     public void panelListManager(){
-        listpanel.add(JpnEmployee_Manager);
-        listpanel.add(Jpntable_Manager);
-        listpanel.add(JpnMenu_Manager);
-        listpanel.add(JpnAccount_Manager);
+        listPanelManage.add(JpnEmployee_Manager);
+        listPanelManage.add(Jpntable_Manager);
+        listPanelManage.add(JpnMenu_Manager);
+        listPanelManage.add(JpnAccount_Manager);
     }
-    public void lableIsSelected( int index){
-        for (int i=0 ;i < listpanel.size(); i++){
+    public void lableIsSelectedManage( int index){
+        for (int i=0 ;i < listPanelManage.size(); i++){
             if(index == i)
-                listpanel.get(i).setVisible(true);
+                listPanelManage.get(i).setVisible(true);
             else
-                listpanel.get(i).setVisible(false);
+                listPanelManage.get(i).setVisible(false);
         }
           
     }
     public void labelListManager(){
-        listlabel.add(JlbEmloyee_manager);
-        listlabel.add(JlbTable_manager);
-        listlabel.add(JlbMenu_manager);
-        listlabel.add(JlbAccount_manager);
+        listLabelManage.add(JlbEmloyee_manager);
+        listLabelManage.add(JlbTable_manager);
+        listLabelManage.add(JlbMenu_manager);
+        listLabelManage.add(JlbAccount_manager);
     }
     public void lableListIsSelected( int index){
-        for (int i=0 ;i < listlabel.size(); i++){
+        for (int i=0 ;i < listLabelManage.size(); i++){
             if(index == i)
-                listlabel.get(i).setBackground(Color.gray);
+                listLabelManage.get(i).setBackground(Color.gray);
             else
-                listlabel.get(i).setBackground(Color.white);
+                listLabelManage.get(i).setBackground(Color.white);
         }   
     }
     
@@ -150,7 +150,6 @@ public class Coffee_management_general extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1260, 800));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -902,23 +901,23 @@ public class Coffee_management_general extends javax.swing.JFrame {
 
     private void JlbEmloyee_managerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JlbEmloyee_managerMouseClicked
         // TODO add your handling code here:
-        lableIsSelected(0);
+        lableIsSelectedManage(0);
         lableListIsSelected(0);
         
     }//GEN-LAST:event_JlbEmloyee_managerMouseClicked
 
     private void JlbTable_managerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JlbTable_managerMouseClicked
-        lableIsSelected(1);
+        lableIsSelectedManage(1);
         lableListIsSelected(1);
     }//GEN-LAST:event_JlbTable_managerMouseClicked
 
     private void JlbMenu_managerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JlbMenu_managerMouseClicked
-        lableIsSelected(2);
+        lableIsSelectedManage(2);
         lableListIsSelected(2);
     }//GEN-LAST:event_JlbMenu_managerMouseClicked
 
     private void JlbAccount_managerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JlbAccount_managerMouseClicked
-        lableIsSelected(3);
+        lableIsSelectedManage(3);
         lableListIsSelected(3);
     }//GEN-LAST:event_JlbAccount_managerMouseClicked
 
