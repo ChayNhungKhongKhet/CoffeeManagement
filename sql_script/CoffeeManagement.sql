@@ -219,9 +219,11 @@ go
 create table order_detail
 (
 order_id int,
+product_id int,
 product_size_id int,
 quantity int,
-primary key(order_id,product_size_id)
+price decimal(5,3),
+primary key(order_id,product_id)
 );
 go
 
@@ -229,9 +231,9 @@ alter table order_detail
 	add constraint FK_order_detail_order_id foreign key(order_id)
 			references [order](id)
 			on update cascade,
-		constraint FK_order_detail_product_size_id foreign key(product_size_id)
-			references product_size(id_product_size)
-			on update cascade
+		constraint FK_order_detail_product_id foreign key(product_id)
+			references product(id)
+			on update cascade		
 go
 
 
@@ -252,16 +254,18 @@ insert into employee([user_name],[name],[password],phone,[address])values
 ('NVThu',N'Lê Thị Hoài Thu','123','0120384102',N'Quảng Nam'),
 ('Admin',N'None','12345','0741242124',N'Quảng Bình')
 go
+set dateformat dmy
+go
 insert into employee_role(employee_id,role_id,start_job_date,quit_job_date)values
-(1,2,'2021/12/24','2022/10/21'),
-(1,3,'2021/1/20',null),
-(3,1,'2022/3/14',null),
-(4,2,'2021/3/10',default),
-(5,4,'2022/1/30',default),
-(2,2,'2021/4/21',default),
-(3,2,'2022/1/15',default),
-(5,1,'2021/12/20',null),
-(6,5,'2021/1/1',null)
+(1,2,'20/01/2021','20/10/2021'),
+(1,3,'20/01/2021',null),
+(3,1,'14/03/2021',null),
+(4,2,'10/03/2021',default),
+(5,4,'30/01/2021',default),
+(2,2,'21/04/2021',default),
+(3,2,'15/01/2021',default),
+(5,1,'20/12/2021',null),
+(6,5,'01/01/2021',null)
 go
 --select * from timesheet
 --insert into timesheet(full_or_part,employee_id,start_time,end_time,[date],note)values
@@ -334,28 +338,24 @@ insert into [table](area)values
 (N'Tầng 3')
 go
 insert into [order](employee_id,table_id,date_time)values
-(1,11,'2021/11/12'),
-(2,2,'2021/11/12'),
-(3,4,'2021/11/12'),
-(4,3,'2021/11/12'),
-(1,5,'2021/11/12'),
-(4,10,'2021/11/12'),
-(2,2,'2021/11/12'),
-(1,9,'2021/11/12')
-go
-insert into order_detail(order_id,product_size_id,quantity)values
-(1,1,10),
-(1,2,10),
-(2,3,3),
-(3,4,5),
-(5,5,2),
-(6,6,3),
-(7,7,1),
-(8,23,4),
-(4,24,7),
-(5,19,12),
-(2,15,9)
+(1,11,'20/12/2021'),
+(2,2,'20/12/2021'),
+(3,4,'20/12/2021'),
+(4,3,'20/12/2021'),
+(1,5,'20/12/2021'),
+(4,10,'20/12/2021'),
+(1,9,'20/12/2021')
 
+go
+insert into order_detail(order_id,product_id,product_size_id,quantity,price)values
+(1,1,1,10,17.000),
+(2,3,3,3,35.000),
+(3,4,1,5,30.000),
+(5,5,1,2,30.000),
+(6,6,3,2,40.000),
+(7,7,1,3,30.000)
+
+go
 insert into supplier([name],phone,[address])values
 (N'Cửa hàng nguyên liệu pha chế trà sữa và cafe ông Tân','0132481234',N'Đà Nẵng')
 go
@@ -378,14 +378,14 @@ insert into ingredient(ingredient_category,[name],degree)values
 (N'Phụ gia','vani','kg')
 go
 insert into receipt(supplier_id,[date])values
-(1,'2022/4/2'),--1
-(1,'2022/4/2'),--2
-(1,'2022/5/2'),--3
-(1,'2022/4/2'),--4
-(1,'2022/5/2'),--5
-(1,'2022/5/10'),--6
-(1,'2022/4/28'),--7
-(1,'2022/5/10')--8
+(1,'04/02/2022'),--1
+(1,'04/02/2022'),--2
+(1,'05/02/2022'),--3
+(1,'04/02/2022'),--4
+(1,'05/02/2022'),--5
+(1,'10/05/2022'),--6
+(1,'28/04/2022'),--7
+(1,'10/05/2022')--8
 go
 
 insert into receipt_detail(receipt_id,ingredient_id,quanlity,price,employee_id)values
@@ -418,3 +418,17 @@ insert into recipe(product_id,ingredient_id,quanlity)values
 (6,5,0.2),
 (7,7,0.2),
 (8,8,0.2)
+
+--select id, date_time,price, table_id
+--from [order]
+
+select *
+from order_detail
+
+select id,date_time, table_id, quantity * price 
+from [order], order_detail
+where [order].id = order_detail.order_id
+
+select receipt_id,supplier_id,[date] ,ingredient_id,quanlity,price, quanlity * price 
+from receipt , receipt_detail
+where receipt.id = receipt_detail.receipt_id
