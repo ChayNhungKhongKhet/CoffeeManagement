@@ -4275,7 +4275,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void btnRevenue338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRevenue338ActionPerformed
 
-        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRevenue338ActionPerformed
 
@@ -4292,7 +4292,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void btnSalary307ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalary307ActionPerformed
 
-        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSalary307ActionPerformed
 
@@ -4311,7 +4311,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void btnWareH338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWareH338ActionPerformed
 
-        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
         // TODO add your handling code here:
     }//GEN-LAST:event_btnWareH338ActionPerformed
 
@@ -4330,7 +4330,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void btnSales338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSales338ActionPerformed
 
-        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSales338ActionPerformed
 
