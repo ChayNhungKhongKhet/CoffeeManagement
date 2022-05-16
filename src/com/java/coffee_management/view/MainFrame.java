@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * @author Admin
  */
 public class MainFrame extends javax.swing.JFrame {
-
+    
     CardLayout card;
     List<JPanel> listPanelViewWarehouse = new ArrayList<>();
     List<JButton> listButtonViewWarehouse = new ArrayList<>();
@@ -59,15 +60,17 @@ public class MainFrame extends javax.swing.JFrame {
         buttonListViewWarehouse();
         setTableTKHoaDon();
         setTableTKKho();
+        tongtienthuve();
+        tongtiennhapkho();
     }
-
+    
     public void panelListStatiscal() {
         listPanelStatistical.add(PanelBill338);
         listPanelStatistical.add(PanelSalary338);
         listPanelStatistical.add(PanelWareHouse338);
         listPanelStatistical.add(PanelSales338);
     }
-
+    
     public void panelIsSelectedStatistical(int index) {
         for (int i = 0; i < listPanelStatistical.size(); i++) {
             if (index == i) {
@@ -76,16 +79,16 @@ public class MainFrame extends javax.swing.JFrame {
                 listPanelStatistical.get(i).setVisible(false);
             }
         }
-
+        
     }
-
+    
     public void buttonListManager() {
         listButtonStatistical.add(btnStatisBill338);
         listButtonStatistical.add(btnStatisSalary338);
         listButtonStatistical.add(btnStatisWareH338);
         listButtonStatistical.add(btnStatisLN338);
     }
-
+    
     public void buttonListIsSelected(int index) {
         for (int i = 0; i < listButtonStatistical.size(); i++) {
             if (index == i) {
@@ -95,14 +98,14 @@ public class MainFrame extends javax.swing.JFrame {
             }
         }
     }
-
+    
     public void panelListManager() {
         listPanelManage.add(JpnEmployee_Manager);
         listPanelManage.add(Jpntable_Manager);
         listPanelManage.add(JpnMenu_Manager);
         listPanelManage.add(JpnAccount_Manager);
     }
-
+    
     public void lableIsSelectedManage(int index) {
         for (int i = 0; i < listPanelManage.size(); i++) {
             if (index == i) {
@@ -111,16 +114,16 @@ public class MainFrame extends javax.swing.JFrame {
                 listPanelManage.get(i).setVisible(false);
             }
         }
-
+        
     }
-
+    
     public void labelListManager() {
         listLabelManage.add(JlbEmloyee_manager);
         listLabelManage.add(JlbTable_manager);
         listLabelManage.add(JlbMenu_manager);
         listLabelManage.add(JlbAccount_manager);
     }
-
+    
     public void lableListIsSelected(int index) {
         for (int i = 0; i < listLabelManage.size(); i++) {
             if (index == i) {
@@ -130,7 +133,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         }
     }
-
+    
     public void panelListViewWarehouse() {
         listPanelViewWarehouse.add(jpnPurchase);
         listPanelViewWarehouse.add(jpnWarehouse);
@@ -138,7 +141,7 @@ public class MainFrame extends javax.swing.JFrame {
         listPanelViewWarehouse.add(jpnIngredientsList);
         listPanelViewWarehouse.add(jpnSupplierInformation);
     }
-
+    
     public void panelIsSelectedWarehouse(int index) {
         for (int i = 0; i < listPanelViewWarehouse.size(); i++) {
             if (index == i) {
@@ -147,18 +150,18 @@ public class MainFrame extends javax.swing.JFrame {
                 listPanelViewWarehouse.get(i).setVisible(false);
             }
         }
-
+        
     }
-
+    
     public void buttonListViewWarehouse() {
         listButtonViewWarehouse.add(btnNhapMua111);
         listButtonViewWarehouse.add(btnNhapKho111);
         listButtonViewWarehouse.add(btnKiiemKe111);
         listButtonViewWarehouse.add(btnDanhMuc111);
         listButtonViewWarehouse.add(btnThongTinNCC111);
-
+        
     }
-
+    
     public void buttonListIsSelectedWarehouse(int index) {
         for (int i = 0; i < listButtonViewWarehouse.size(); i++) {
             if (index == i) {
@@ -168,12 +171,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         }
     }
-    
-    
-    
+
 /////////////////////////////////////////////////////THONG KE////////////////////////////////////////////////////////////////////
-    
-    
     // SHOW DATA
     /// BILL
     public void setTableTKHoaDon() {
@@ -184,7 +183,7 @@ public class MainFrame extends javax.swing.JFrame {
         tblReceipt338.setModel(dftableTKHoaDonModel);
         showDataTKHoaDon();
     }
-
+    
     public void showDataTKHoaDon() {
         try {
             ResultSet rs = sqlHandler.getAllDataTKHoaDon();
@@ -198,18 +197,17 @@ public class MainFrame extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-    
+
     // KHO
-    
     public void setTableTKKho() {
         String columns[] = {
-            "Mã hóa đơn", "Mã nhà cung cấp", "Tên nhà cung cấp", "Thời gian","Mã nguyên liệu","Số lượng","Giá","Thành tiền"
+            "Mã hóa đơn", "Mã nhà cung cấp", "Tên nhà cung cấp", "Thời gian", "Mã nguyên liệu", "Số lượng", "Giá", "Thành tiền"
         };
         dftableTKKhoModel.setColumnIdentifiers(columns);
         tbSale338.setModel(dftableTKKhoModel);
         showDataTKKho();
     }
-
+    
     public void showDataTKKho() {
         try {
             ResultSet rs = sqlHandler.getAllDataTKKho();
@@ -224,6 +222,27 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }
     
+    DecimalFormat df = new DecimalFormat("#");
+/////////////////////////////////////////////////////THONG KE////////////////////////////////////////////////////////////////////
+    // Tổng tiền
+
+    public void tongtienthuve() {
+        double tongtien = 0;
+        int row = tblReceipt338.getRowCount();
+        for (int i = 0; i < row; i++) {
+            tongtien += Double.valueOf(tblReceipt338.getModel().getValueAt(i, 3).toString()) * 1000;
+        }
+        lbCollectedMoney338.setText("" +  df.format(tongtien) + "  VNĐ");
+    }
+    
+     public void tongtiennhapkho() {
+        double tongtien = 0;
+        int row = tbSale338.getRowCount();
+        for (int i = 0; i < row; i++) {
+            tongtien += Double.valueOf(tbSale338.getModel().getValueAt(i, 7).toString()) * 1000;
+        }
+        lbSalesMoney_338.setText("" +  df.format(tongtien) + "  VNĐ");
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -311,7 +330,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        lbSalesMoney339 = new javax.swing.JLabel();
+        lbSalesMoney_338 = new javax.swing.JLabel();
         PanelSales338 = new javax.swing.JPanel();
         PanelAllSale338 = new javax.swing.JPanel();
         PanelNorth340 = new javax.swing.JPanel();
@@ -1510,11 +1529,11 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0), 2));
         jLabel31.setOpaque(true);
 
-        lbSalesMoney339.setBackground(new java.awt.Color(255, 255, 255));
-        lbSalesMoney339.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbSalesMoney339.setForeground(new java.awt.Color(204, 0, 0));
-        lbSalesMoney339.setText(".....");
-        lbSalesMoney339.setOpaque(true);
+        lbSalesMoney_338.setBackground(new java.awt.Color(255, 255, 255));
+        lbSalesMoney_338.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbSalesMoney_338.setForeground(new java.awt.Color(204, 0, 0));
+        lbSalesMoney_338.setText(".....");
+        lbSalesMoney_338.setOpaque(true);
 
         javax.swing.GroupLayout PanelSouthSales338Layout = new javax.swing.GroupLayout(PanelSouthSales338);
         PanelSouthSales338.setLayout(PanelSouthSales338Layout);
@@ -1533,7 +1552,7 @@ public class MainFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel31)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbSalesMoney339, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lbSalesMoney_338, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         PanelSouthSales338Layout.setVerticalGroup(
@@ -1542,7 +1561,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addGroup(PanelSouthSales338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
-                    .addComponent(lbSalesMoney339, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbSalesMoney_338, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(PanelSouthSales338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelSouthSales338Layout.createSequentialGroup()
                         .addGap(59, 59, 59)
@@ -4225,7 +4244,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnStatisLN338MouseClicked
 
     private void btnRevenue338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRevenue338ActionPerformed
-
+        
         SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRevenue338ActionPerformed
@@ -4242,7 +4261,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_cbbSalarySort307ItemStateChanged
 
     private void btnSalary307ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalary307ActionPerformed
-
+        
         SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSalary307ActionPerformed
@@ -4261,7 +4280,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_cbbDishGroup338ItemStateChanged
 
     private void btnWareH338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWareH338ActionPerformed
-
+        
         SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
         // TODO add your handling code here:
     }//GEN-LAST:event_btnWareH338ActionPerformed
@@ -4276,11 +4295,11 @@ public class MainFrame extends javax.swing.JFrame {
             row = sheet.createRow(2);// để lại 2 dòng trống
             cell = row.createCell(0, CellType.STRING);
             cell.setCellValue("DANH SACH KHO");
-
+            
             row = sheet.createRow(3);
             cell = row.createCell(0, CellType.STRING);
             cell.setCellValue("STT");
-
+            
             cell = row.createCell(1, CellType.STRING);
             cell.setCellValue("MA HD");
             
@@ -4289,13 +4308,13 @@ public class MainFrame extends javax.swing.JFrame {
             
             cell = row.createCell(3, CellType.STRING);
             cell.setCellValue("TEN NCC");
-
+            
             cell = row.createCell(4, CellType.STRING);
             cell.setCellValue("THOI GIAN");
             
             cell = row.createCell(5, CellType.STRING);
             cell.setCellValue("MA NGUYEN LIEU");
-
+            
             cell = row.createCell(6, CellType.STRING);
             cell.setCellValue("SO LUONG");
             
@@ -4308,25 +4327,25 @@ public class MainFrame extends javax.swing.JFrame {
             ResultSet rs = sqlHandler.getAllDataTKKho();
             while (rs.next()) {
                 row = sheet.createRow(4 + i);
-
+                
                 cell = row.createCell(0, CellType.NUMERIC);
                 cell.setCellValue(i + 1);
-
+                
                 cell = row.createCell(1, CellType.STRING);                
                 cell.setCellValue(rs.getInt(1));
                 
                 cell = row.createCell(2, CellType.STRING);                
                 cell.setCellValue(rs.getInt(2));
-
+                
                 cell = row.createCell(3, CellType.STRING);
                 cell.setCellValue(rs.getString(3));
-
+                
                 cell = row.createCell(4, CellType.STRING);
                 cell.setCellValue(rs.getString(4));
                 
                 cell = row.createCell(5, CellType.STRING);                
                 cell.setCellValue(rs.getInt(5));
-
+                
                 cell = row.createCell(6, CellType.STRING);
                 cell.setCellValue(rs.getString(6));
                 
@@ -4338,7 +4357,7 @@ public class MainFrame extends javax.swing.JFrame {
                 
                 i++;
             }
-
+            
             File f = new File("D://ThongKeKho.xlsx");
             try {
                 FileOutputStream fis = new FileOutputStream(f);
@@ -4346,17 +4365,17 @@ public class MainFrame extends javax.swing.JFrame {
                 fis.close();
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
-
+                
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
-
+            
             JOptionPane.showMessageDialog(this, "in thanh cong D:\\ThongKeKho");
-
+            
         } catch (Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "Loi mo file");
-        }   
+        }        
     }//GEN-LAST:event_btnExcelWare338ActionPerformed
 
     private void tbSale338MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbSale338MouseClicked
@@ -4369,7 +4388,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_cbbDishGroup340ItemStateChanged
 
     private void btnSales338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSales338ActionPerformed
-
+        
         SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSales338ActionPerformed
@@ -4570,17 +4589,17 @@ public class MainFrame extends javax.swing.JFrame {
             row = sheet.createRow(2);// để lại 2 dòng trống
             cell = row.createCell(0, CellType.STRING);
             cell.setCellValue("DANH SACH HOA DON");
-
+            
             row = sheet.createRow(3);
             cell = row.createCell(0, CellType.STRING);
             cell.setCellValue("STT");
-
+            
             cell = row.createCell(1, CellType.STRING);
             cell.setCellValue("MA HD");
-
+            
             cell = row.createCell(2, CellType.STRING);
             cell.setCellValue("THOI GIAN");
-
+            
             cell = row.createCell(3, CellType.STRING);
             cell.setCellValue("BAN");
             
@@ -4590,17 +4609,17 @@ public class MainFrame extends javax.swing.JFrame {
             ResultSet rs = sqlHandler.getAllDataTKHoaDon();
             while (rs.next()) {
                 row = sheet.createRow(4 + i);
-
+                
                 cell = row.createCell(0, CellType.NUMERIC);
                 cell.setCellValue(i + 1);
-
+                
                 cell = row.createCell(1, CellType.STRING);
                 
                 cell.setCellValue(rs.getInt(1));
-
+                
                 cell = row.createCell(2, CellType.STRING);
                 cell.setCellValue(rs.getString(2));
-
+                
                 cell = row.createCell(3, CellType.STRING);
                 cell.setCellValue(rs.getString(3));
                 
@@ -4608,7 +4627,7 @@ public class MainFrame extends javax.swing.JFrame {
                 cell.setCellValue(rs.getString(4));
                 i++;
             }
-
+            
             File f = new File("D://ThongKeHD.xlsx");
             try {
                 FileOutputStream fis = new FileOutputStream(f);
@@ -4616,17 +4635,17 @@ public class MainFrame extends javax.swing.JFrame {
                 fis.close();
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
-
+                
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
-
+            
             JOptionPane.showMessageDialog(this, "in thanh cong D:\\ThongKeHD");
-
+            
         } catch (Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "Loi mo file");
-        }   
+        }        
     }//GEN-LAST:event_btnXuatExcel338ActionPerformed
 
     /**
@@ -5019,7 +5038,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lbCollectedMoney338;
     private javax.swing.JLabel lbSalaryTotal307;
     private javax.swing.JLabel lbSalesMoney338;
-    private javax.swing.JLabel lbSalesMoney339;
+    private javax.swing.JLabel lbSalesMoney_338;
     private javax.swing.JButton logOutButton307;
     private javax.swing.JPanel mainPanel307;
     private javax.swing.JPanel managePanel;

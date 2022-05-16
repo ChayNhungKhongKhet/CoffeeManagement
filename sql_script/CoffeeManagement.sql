@@ -429,6 +429,8 @@ select id,date_time, table_id, quantity * price
 from [order], order_detail
 where [order].id = order_detail.order_id
 
-select receipt_id,supplier_id,[date] ,ingredient_id,quanlity,price, quanlity * price 
-from receipt , receipt_detail
-where receipt.id = receipt_detail.receipt_id
+select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price 
+from supplier,receipt , receipt_detail
+where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id
+
+receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price  from supplier,receipt , receipt_detail where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id
