@@ -17,22 +17,22 @@ public class SQLHandler {
         conn.connect();
     }
 
-    public ResultSet getAllDataTKHoaDon() {
+    public ResultSet getAllDataTKHoaDon338() {
         String query = "select id,date_time, table_id, quantity * price from [order], order_detail where [order].id = order_detail.order_id" ;
         return conn.getData(query);
     }
     
-    public ResultSet getAllDataTKKho() {
+    public ResultSet getAllDataTKKho338() {
         String query = "select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price  from supplier,receipt , receipt_detail where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id" ;
         return conn.getData(query);
     }
     
-    public ResultSet getAllDataTKKhoDesc() {
+    public ResultSet getAllDataTKKhoDesc338() {
         String query = "select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price as ThanhTien from supplier,receipt , receipt_detail where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id order by ThanhTien desc" ;
         return conn.getData(query);
     }
     
-     public ResultSet getAllDataTKKhoAsc() {
+     public ResultSet getAllDataTKKhoAsc338() {
         String query = "select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price as ThanhTien from supplier,receipt , receipt_detail where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id order by ThanhTien asc" ;
         return conn.getData(query);
     }

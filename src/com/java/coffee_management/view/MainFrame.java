@@ -187,7 +187,7 @@ public class MainFrame extends javax.swing.JFrame {
     
     public void showDataTKHoaDon() {
         try {
-            ResultSet rs = sqlHandler.getAllDataTKHoaDon();
+            ResultSet rs = sqlHandler.getAllDataTKHoaDon338();
             while (rs.next()) {
                 Object[] rows = {
                     rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)
@@ -211,7 +211,7 @@ public class MainFrame extends javax.swing.JFrame {
     
     public void showDataTKKho() {
         try {
-            ResultSet rs = sqlHandler.getAllDataTKKho();
+            ResultSet rs = sqlHandler.getAllDataTKKho338();
             while (rs.next()) {
                 Object[] rows = {
                     rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)
@@ -231,7 +231,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     public void showDataTKKhoDesc() {
         try {
-            ResultSet rs = sqlHandler.getAllDataTKKhoDesc();
+            ResultSet rs = sqlHandler.getAllDataTKKhoDesc338();
             while (rs.next()) {
                 Object[] rows = {
                     rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)
@@ -245,7 +245,7 @@ public class MainFrame extends javax.swing.JFrame {
     
     public void showDataTKKhoAsc() {
         try {
-            ResultSet rs = sqlHandler.getAllDataTKKhoAsc();
+            ResultSet rs = sqlHandler.getAllDataTKKhoAsc338();
             while (rs.next()) {
                 Object[] rows = {
                     rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)
@@ -4366,7 +4366,7 @@ public class MainFrame extends javax.swing.JFrame {
             cell = row.createCell(8, CellType.STRING);
             cell.setCellValue("THANH TIEN");
             int i = 0;
-            ResultSet rs = sqlHandler.getAllDataTKKho();
+            ResultSet rs = sqlHandler.getAllDataTKKho338();
             while (rs.next()) {
                 row = sheet.createRow(4 + i);
                 
@@ -4648,7 +4648,7 @@ public class MainFrame extends javax.swing.JFrame {
             cell = row.createCell(4, CellType.STRING);
             cell.setCellValue("THANH TIEN");
             int i = 0;
-            ResultSet rs = sqlHandler.getAllDataTKHoaDon();
+            ResultSet rs = sqlHandler.getAllDataTKHoaDon338();
             while (rs.next()) {
                 row = sheet.createRow(4 + i);
                 
