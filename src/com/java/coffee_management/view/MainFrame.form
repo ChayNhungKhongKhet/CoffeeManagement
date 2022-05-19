@@ -1467,7 +1467,7 @@
                                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="cbbDishGroup338" min="-2" pref="100" max="-2" attributes="0"/>
+                                              <Component id="cbbMoneyGroup338" min="-2" pref="100" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="jLabel26" min="-2" pref="56" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
@@ -1497,7 +1497,7 @@
                                               <Component id="jLabel8" min="-2" pref="41" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="cbbDishGroup338" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="cbbMoneyGroup338" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
@@ -1561,7 +1561,7 @@
                                 <Property name="text" type="java.lang.String" value="S&#x1eaf;p x&#x1ebf;p:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JComboBox" name="cbbDishGroup338">
+                            <Component class="javax.swing.JComboBox" name="cbbMoneyGroup338">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Tahoma" size="12" style="0"/>
@@ -1575,7 +1575,8 @@
                                 </Property>
                               </Properties>
                               <Events>
-                                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cbbDishGroup338ItemStateChanged"/>
+                                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cbbMoneyGroup338ItemStateChanged"/>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbbMoneyGroup338ActionPerformed"/>
                               </Events>
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>

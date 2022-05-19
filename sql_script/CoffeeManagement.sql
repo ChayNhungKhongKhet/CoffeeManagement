@@ -433,4 +433,7 @@ select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanl
 from supplier,receipt , receipt_detail
 where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id
 
-receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price  from supplier,receipt , receipt_detail where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id
+select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price as ThanhTien
+from supplier,receipt , receipt_detail
+where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id
+order by ThanhTien desc

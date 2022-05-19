@@ -27,4 +27,13 @@ public class SQLHandler {
         return conn.getData(query);
     }
     
+    public ResultSet getAllDataTKKhoDesc() {
+        String query = "select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price as ThanhTien from supplier,receipt , receipt_detail where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id order by ThanhTien desc" ;
+        return conn.getData(query);
+    }
+    
+     public ResultSet getAllDataTKKhoAsc() {
+        String query = "select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price as ThanhTien from supplier,receipt , receipt_detail where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id order by ThanhTien asc" ;
+        return conn.getData(query);
+    }
 }

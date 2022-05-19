@@ -18,6 +18,7 @@ import java.sql.Statement;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -221,7 +222,40 @@ public class MainFrame extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
+     public void clearTableTKKho(DefaultTableModel dftableModel) {
+        int n = dftableModel.getRowCount() - 1;
+        for (int i = n; i >= 0; i--) {
+            dftableModel.removeRow(i);
+        }
+    }
+
+    public void showDataTKKhoDesc() {
+        try {
+            ResultSet rs = sqlHandler.getAllDataTKKhoDesc();
+            while (rs.next()) {
+                Object[] rows = {
+                    rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)
+                };
+                dftableTKKhoModel.addRow(rows);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     
+    public void showDataTKKhoAsc() {
+        try {
+            ResultSet rs = sqlHandler.getAllDataTKKhoAsc();
+            while (rs.next()) {
+                Object[] rows = {
+                    rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)
+                };
+                dftableTKKhoModel.addRow(rows);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     DecimalFormat df = new DecimalFormat("#");
 /////////////////////////////////////////////////////THONG KE////////////////////////////////////////////////////////////////////
     // Tổng tiền
@@ -243,6 +277,9 @@ public class MainFrame extends javax.swing.JFrame {
         }
         lbSalesMoney_338.setText("" +  df.format(tongtien) + "  VNĐ");
     }
+     
+ //////////////////////////////////////////////////////////THONG KE/////////////////////////////////////////////////
+     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -314,7 +351,7 @@ public class MainFrame extends javax.swing.JFrame {
         PanelNorthSales338 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        cbbDishGroup338 = new javax.swing.JComboBox<>();
+        cbbMoneyGroup338 = new javax.swing.JComboBox<>();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         dateChooser5 = new com.toedter.calendar.JDateChooser();
@@ -1359,11 +1396,16 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/sort_by_338_32.png"))); // NOI18N
         jLabel9.setText("Sắp xếp:");
 
-        cbbDishGroup338.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        cbbDishGroup338.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tăng dần", "Giảm dần", " " }));
-        cbbDishGroup338.addItemListener(new java.awt.event.ItemListener() {
+        cbbMoneyGroup338.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cbbMoneyGroup338.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tăng dần", "Giảm dần", " " }));
+        cbbMoneyGroup338.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cbbDishGroup338ItemStateChanged(evt);
+                cbbMoneyGroup338ItemStateChanged(evt);
+            }
+        });
+        cbbMoneyGroup338.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbbMoneyGroup338ActionPerformed(evt);
             }
         });
 
@@ -1416,7 +1458,7 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbbDishGroup338, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbbMoneyGroup338, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1442,7 +1484,7 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelNorthSales338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cbbDishGroup338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbbMoneyGroup338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9)))
                     .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelNorthSales338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -4274,10 +4316,10 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tbSalary307MouseClicked
 
-    private void cbbDishGroup338ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbbDishGroup338ItemStateChanged
+    private void cbbMoneyGroup338ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbbMoneyGroup338ItemStateChanged
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbbDishGroup338ItemStateChanged
+    }//GEN-LAST:event_cbbMoneyGroup338ItemStateChanged
 
     private void btnWareH338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWareH338ActionPerformed
         
@@ -4648,6 +4690,18 @@ public class MainFrame extends javax.swing.JFrame {
         }        
     }//GEN-LAST:event_btnXuatExcel338ActionPerformed
 
+    private void cbbMoneyGroup338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbbMoneyGroup338ActionPerformed
+        // TODO add your handling code here:
+        if (cbbMoneyGroup338.getSelectedItem().equals("Giảm dần")){
+            clearTableTKKho(dftableTKKhoModel);
+            showDataTKKhoDesc();
+        }
+        if (cbbMoneyGroup338.getSelectedItem().equals("Tăng dần")){
+            clearTableTKKho(dftableTKKhoModel);
+            showDataTKKhoAsc();
+        }
+    }//GEN-LAST:event_cbbMoneyGroup338ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4745,8 +4799,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnXuatExcel338;
     private javax.swing.JButton btnXuatExcelSalary307;
     private javax.swing.JButton btnXuatExcelSale338;
-    private javax.swing.JComboBox<String> cbbDishGroup338;
     private javax.swing.JComboBox<String> cbbDishGroup340;
+    private javax.swing.JComboBox<String> cbbMoneyGroup338;
     private javax.swing.JComboBox<String> cbbSalarySort307;
     private com.toedter.calendar.JDateChooser dateChooser1;
     private com.toedter.calendar.JDateChooser dateChooser10;
