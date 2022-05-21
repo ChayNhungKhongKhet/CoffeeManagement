@@ -20,8 +20,13 @@ public class SQLHandler {
     public ResultSet getAllDataTKHoaDon338() {
         String query = "select id,date_time, table_id, quantity * price from [order], order_detail where [order].id = order_detail.order_id" ;
         return conn.getData(query);
-    }    
-
+    }
+    
+    public ResultSet getAllDataTKHoaDonDate338(String datefrom, String dateto) {
+        String query = "select id,date_time, table_id, quantity * price from [order], order_detail where [order].id = order_detail.order_id and date_time >= '"+datefrom+"' and date_time <= '"+dateto+"' " ;
+        return conn.getData(query);
+    }
+    
     public ResultSet getAllDataTKKho338() {
         String query = "select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price  from supplier,receipt , receipt_detail where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id" ;
         return conn.getData(query);
@@ -49,6 +54,12 @@ public class SQLHandler {
     
     public ResultSet getCountTKNV338(){
         String query = "select COUNT (*)from employee" ;
+        return conn.getData(query);
+    }
+    
+    
+    public ResultSet getDataDate(String datefrom, String dateto) {
+        String query = "select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price  from supplier,receipt , receipt_detail where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id and [date] >= '"+datefrom+"'  and [date] <= '"+dateto+"' ";
         return conn.getData(query);
     }
 }

@@ -1497,10 +1497,8 @@
                                               <Component id="btnWareH338" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                                               <Component id="btnExcelWare338" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel27" min="-2" pref="21" max="-2" attributes="0"/>
-                                              <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="jDateChooser1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel27" min="-2" pref="21" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
                                   </Group>

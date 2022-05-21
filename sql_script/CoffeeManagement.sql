@@ -423,50 +423,32 @@ insert into recipe(product_id,ingredient_id,quanlity)values
 --select id, date_time,price, table_id
 --from [order]
 
-select *
-from order_detail
+--select *
+--from order_detail
 
-select id,date_time, table_id, quantity * price 
-from [order], order_detail
-where [order].id = order_detail.order_id
+--select id,date_time, table_id, quantity * price 
+--from [order], order_detail
+--where [order].id = order_detail.order_id
 
-select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price 
-from supplier,receipt , receipt_detail
-where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id
+--select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price 
+--from supplier,receipt , receipt_detail
+--where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id
 
-select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price as ThanhTien
-from supplier,receipt , receipt_detail
-where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id
-order by ThanhTien desc
+--select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price as ThanhTien
+--from supplier,receipt , receipt_detail
+--where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id
+--order by ThanhTien desc
+--select * from receipt
+--select COUNT (*)from receipt
+--select COUNT (*)
+--from order_detail
 
-select COUNT (*)
-from order_detail
+--select COUNT (*)from [order]
+select * from [order]
+select * from order_detail
+-----------------
+--select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price  from supplier,receipt , receipt_detail where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id and [date] >= '05/02/2022'  and [date] <= '10/05/2022' 
+--select id,date_time, table_id, quantity * price from [order], order_detail where [order].id = order_detail.order_id and date_time >= '11/02/2021' and date_time <= '30/12/2022' 
 
-select COUNT (*)from [order]
-
----------------
-go
-	create function fn_TK_NhapKho
-	(
-		@ngaybatdau date,
-		@ngayketthuc date
-	)
-	returns money
-	begin
-		RETURN (SELECT SUM(donGia * soLuongDat)
-				from DonDatHang_HoaDon AS d
-					JOIN ChiTietDonHang AS c 
-					ON d.maDH = c.maDH 
-				WHERE d.ngayThanhToan >= @ngaybatdau AND d.ngayThanhToan <= @ngayketthuc
-				)
-	end
-	-- gọi hàm 
-	go
-	set dateformat dmy
-	go
-	print dbo.fn_TongTien_TheoNgay('01-09-2021','30-09-2021') 	
-
-
-
-	select id,date_time, table_id, quantity * price from [order], order_detail where [order].id = order_detail.order_id and date_time > '11/02/2021' and date_time < '30/12
-	/2022' 
+select id,date_time, table_id, quantity * price from [order], order_detail where [order].id = order_detail.order_id
+select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price  from supplier,receipt , receipt_detail where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id

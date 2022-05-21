@@ -1519,9 +1519,8 @@ public class MainFrame extends javax.swing.JFrame {
                     .addGroup(PanelNorthSales338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnWareH338, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnExcelWare338, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PanelNorthSales338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -4285,9 +4284,39 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void btnRevenue338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRevenue338ActionPerformed
         
-       
+        SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
+        // TODO add your handling code here:
+        datefrom = sf.format(jDateChooser3.getDate());
+        dateto = sf.format(jDateChooser4.getDate());
+        
+        clearTableTKKho(dftableTKHoaDonModel);
+        setTableTKHoaDonDate();
     }//GEN-LAST:event_btnRevenue338ActionPerformed
-  
+
+    public void setTableTKHoaDonDate() {
+        String columns[] = {
+            "Mã hóa đơn", "Thời gian", "Bàn", "Thành tiền"
+        };
+        dftableTKHoaDonModel.setColumnIdentifiers(columns);
+        tblReceipt338.setModel(dftableTKHoaDonModel);
+        showDataTKHoaDon();
+    }
+    
+    public void showDataTKHoaDonDate() {
+        try {
+            ResultSet rs = sqlHandler.getAllDataTKHoaDonDate338(datefrom, dateto);
+            while (rs.next()) {
+                Object[] rows = {
+                    rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)
+                };
+                dftableTKHoaDonModel.addRow(rows);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
     
     private void btnSeeDetail338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeeDetail338ActionPerformed
         // TODO add your handling code here:
@@ -4320,9 +4349,39 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_cbbMoneyGroup338ItemStateChanged
 
     private void btnWareH338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWareH338ActionPerformed
-     
+        
+        SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+        // TODO add your handling code here:
+        datefrom = sf.format(jDateChooser2.getDate());
+        dateto = sf.format(jDateChooser1.getDate());
+        clearTableTKKho(dftableTKKhoModel);
+        setTableTKKhoDate();
     }//GEN-LAST:event_btnWareH338ActionPerformed
- 
+
+    public void showDataDateTKKho() {
+        try {
+            ResultSet rs = sqlHandler.getDataDate(datefrom, dateto);
+            while (rs.next()) {
+                Object[] rows = {
+                    rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)
+                };
+                dftableTKKhoModel.addRow(rows);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void setTableTKKhoDate() {
+        String columns[] = {
+            "Mã hóa đơn", "Mã nhà cung cấp", "Tên nhà cung cấp", "Thời gian", "Mã nguyên liệu", "Số lượng", "Giá", "Thành tiền"
+        };
+        dftableTKKhoModel.setColumnIdentifiers(columns);
+        tbSale338.setModel(dftableTKKhoModel);
+        showDataDateTKKho();
+    }
+    
+    
     private void btnExcelWare338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcelWare338ActionPerformed
         // TODO add your handling code here:
         try {
