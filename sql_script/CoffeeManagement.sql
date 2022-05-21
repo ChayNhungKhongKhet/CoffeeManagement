@@ -388,6 +388,7 @@ insert into receipt(supplier_id,[date])values
 (1,'10/05/2022')--8
 go
 
+
 insert into receipt_detail(receipt_id,ingredient_id,quanlity,price,employee_id)values
 (1,1,2,15.000,5),
 (2,2,3,22.000,1),
@@ -437,3 +438,35 @@ select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanl
 from supplier,receipt , receipt_detail
 where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id
 order by ThanhTien desc
+
+select COUNT (*)
+from order_detail
+
+select COUNT (*)from [order]
+
+---------------
+go
+	create function fn_TK_NhapKho
+	(
+		@ngaybatdau date,
+		@ngayketthuc date
+	)
+	returns money
+	begin
+		RETURN (SELECT SUM(donGia * soLuongDat)
+				from DonDatHang_HoaDon AS d
+					JOIN ChiTietDonHang AS c 
+					ON d.maDH = c.maDH 
+				WHERE d.ngayThanhToan >= @ngaybatdau AND d.ngayThanhToan <= @ngayketthuc
+				)
+	end
+	-- gọi hàm 
+	go
+	set dateformat dmy
+	go
+	print dbo.fn_TongTien_TheoNgay('01-09-2021','30-09-2021') 	
+
+
+
+	select id,date_time, table_id, quantity * price from [order], order_detail where [order].id = order_detail.order_id and date_time > '11/02/2021' and date_time < '30/12
+	/2022' 
