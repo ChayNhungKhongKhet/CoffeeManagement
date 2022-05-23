@@ -355,7 +355,6 @@ public class MainFrame extends javax.swing.JFrame {
         jDateChooser3 = new com.toedter.calendar.JDateChooser();
         jDateChooser4 = new com.toedter.calendar.JDateChooser();
         btnXuatExcel338 = new javax.swing.JButton();
-        btnSeeDetail338 = new javax.swing.JButton();
         jScrollPane20 = new javax.swing.JScrollPane();
         tblReceipt338 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
@@ -983,15 +982,6 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        btnSeeDetail338.setBackground(new java.awt.Color(255, 102, 102));
-        btnSeeDetail338.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnSeeDetail338.setText("XEM CHI TIẾT");
-        btnSeeDetail338.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSeeDetail338ActionPerformed(evt);
-            }
-        });
-
         tblReceipt338.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -1043,9 +1033,7 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(lbCollectedMoney338, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnXuatExcel338, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSeeDetail338)))
+                        .addComponent(btnXuatExcel338, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1059,10 +1047,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(btnXuatExcel338, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSeeDetail338, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnXuatExcel338, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1074,7 +1059,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addComponent(jLabel7)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         jLabel6.setBackground(new java.awt.Color(69, 32, 16));
@@ -4318,12 +4303,6 @@ public class MainFrame extends javax.swing.JFrame {
     
     
     
-    private void btnSeeDetail338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeeDetail338ActionPerformed
-        // TODO add your handling code here:
-        DetailBill detalil = new DetailBill();
-        detalil.setVisible(true);
-    }//GEN-LAST:event_btnSeeDetail338ActionPerformed
-
     private void cbbSalarySort307ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbbSalarySort307ItemStateChanged
 
         // TODO add your handling code here:
@@ -4810,7 +4789,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnNhapMua111;
     private javax.swing.JButton btnRevenue338;
     private javax.swing.JButton btnSalary307;
-    private javax.swing.JButton btnSeeDetail338;
     private javax.swing.JButton btnSell307;
     private javax.swing.JButton btnStatisBill338;
     private javax.swing.JButton btnStatisLN338;

@@ -447,7 +447,7 @@ insert into recipe(product_id,ingredient_id,quanlity)values
 select * from [order]
 select * from order_detail
 -----------------
---select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price  from supplier,receipt , receipt_detail where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id and [date] >= '05/02/2022'  and [date] <= '10/05/2022' 
+select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price  from supplier,receipt , receipt_detail where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id and [date] >= '05/02/2022'  and [date] <= '10/05/2022' 
 --select id,date_time, table_id, quantity * price from [order], order_detail where [order].id = order_detail.order_id and date_time >= '11/02/2021' and date_time <= '30/12/2022' 
 
 select id,date_time, table_id, quantity * price from [order], order_detail where [order].id = order_detail.order_id
