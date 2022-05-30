@@ -3,15 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/LeNa_CNTT/JAVA/CoffeeManagement/src/com/java/coffee_management/view/EditMenu.java</file>
-            <file>file:/D:/LeNa_CNTT/JAVA/CoffeeManagement/src/com/java/coffee_management/view/AddTable.java</file>
+            <file>file:/D:/LeNa_CNTT/JAVA/CoffeeManagement/src/com/java/coffee_management/entity/Employee_entity.java</file>
+            <file>file:/D:/LeNa_CNTT/JAVA/CoffeeManagement/src/com/java/coffee_management/Dao/ConnectionDB.java</file>
             <file>file:/D:/LeNa_CNTT/JAVA/CoffeeManagement/src/com/java/coffee_management/view/Coffee_management_general.java</file>
             <file>file:/D:/LeNa_CNTT/JAVA/CoffeeManagement/src/com/java/coffee_management/view/AddEmployee.java</file>
-            <file>file:/D:/LeNa_CNTT/JAVA/CoffeeManagement/src/com/java/coffee_management/view/AddMenu.java</file>
-            <file>file:/D:/LeNa_CNTT/JAVA/CoffeeManagement/src/com/java/coffee_management/view/EditAccount.java</file>
-            <file>file:/D:/LeNa_CNTT/JAVA/CoffeeManagement/src/com/java/coffee_management/view/MainFrame.java</file>
             <file>file:/D:/LeNa_CNTT/JAVA/CoffeeManagement/src/com/java/coffee_management/view/EditEmployee.java</file>
-            <file>file:/D:/LeNa_CNTT/JAVA/CoffeeManagement/src/com/java/coffee_management/view/EditTable.java</file>
+            <file>file:/D:/LeNa_CNTT/JAVA/CoffeeManagement/src/com/java/coffee_management/Dao/Dao.java</file>
         </group>
     </open-files>
 </project-private>

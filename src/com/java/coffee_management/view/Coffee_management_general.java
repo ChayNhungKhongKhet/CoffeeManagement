@@ -3,11 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.java.coffee_management.view;
+import com.java.coffee_management.Dao.Dao;
+import com.java.coffee_management.entity.Employee_entity;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,9 +19,8 @@ import javax.swing.JPanel;
 public class Coffee_management_general extends javax.swing.JFrame {
     List<JPanel> listPanelManage =new ArrayList<>();
     List<JLabel> listLabelManage =new ArrayList<>();
-    /**
-     * Creates new form Coffee_management_general
-     */
+    Dao dao = new Dao();
+    DefaultTableModel defaultTableModel = new DefaultTableModel();
     public Coffee_management_general() {
         initComponents();
         setLocationRelativeTo(null);
@@ -26,6 +28,25 @@ public class Coffee_management_general extends javax.swing.JFrame {
         labelListManager();
         lableIsSelectedManage(0);
         lableListIsSelected(0);
+                defaultTableModel = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false; // khong cho phep nguoi dung Edit du lieu trong bang
+            }
+        };
+        
+        tableEmployeeManager234.setModel(defaultTableModel);
+        
+        defaultTableModel.addColumn("Họ và tên");
+        defaultTableModel.addColumn("Ngày vào làm");
+        defaultTableModel.addColumn("Số điện thoại");
+        defaultTableModel.addColumn("Chức vụ");
+//        
+        List<Employee_entity> emp = dao.getAllEmployee_234();
+        System.out.println(emp);
+        for(Employee_entity e : emp){
+            defaultTableModel.addRow(new Object[]{e.getTennv(),e.getNgayVaoLam(),e.getSoDienThoai(),e.getChucVu()});
+        }
     }
     public void panelListManager(){
         listPanelManage.add(JpnEmployee_Manager);
