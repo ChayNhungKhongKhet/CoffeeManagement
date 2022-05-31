@@ -13,6 +13,32 @@ public class Employee_entity {
     private String ngayVaoLam;
     private String SoDienThoai;
     private String ChucVu;
+    private String userName,password;
+    private int id;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
 
     public Employee_entity() {
     }

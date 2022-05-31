@@ -3,12 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.java.coffee_management.view;
+import com.java.coffe_management.Service.Service;
 import com.java.coffee_management.Dao.Dao;
 import com.java.coffee_management.entity.Employee_entity;
+import com.java.coffee_management.entity.Table;
+import com.java.coffee_management.entity.Menu_entity;
+import com.java.coffee_management.entity.category;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -21,8 +26,20 @@ public class Coffee_management_general extends javax.swing.JFrame {
     List<JLabel> listLabelManage =new ArrayList<>();
     Dao dao = new Dao();
     DefaultTableModel defaultTableModel = new DefaultTableModel();
+    DefaultTableModel defaultTableModelTB = new DefaultTableModel();
+    DefaultTableModel defaultTableModelMN = new DefaultTableModel();
+    Service service = new Service();
     public Coffee_management_general() {
         initComponents();
+        textFieldTotalEmployee234.setText(String.valueOf(service.demNV()));
+        textFieldTotalTable234.setText(String.valueOf(service.demBan()));
+        textFieldTotalDrink234.setText(String.valueOf(service.demMenu()));
+        comboBoxTypeDrink234.removeAllItems();
+        List<category> cts = new ArrayList<>();
+        cts = service.getAllCategory_234();
+        for (category c:cts){
+            comboBoxTypeDrink234.addItem(c.getName());
+        }
         setLocationRelativeTo(null);
         panelListManager();
         labelListManager();
@@ -36,16 +53,51 @@ public class Coffee_management_general extends javax.swing.JFrame {
         };
         
         tableEmployeeManager234.setModel(defaultTableModel);
-        
+        defaultTableModel.addColumn("id");
         defaultTableModel.addColumn("Họ và tên");
         defaultTableModel.addColumn("Ngày vào làm");
         defaultTableModel.addColumn("Số điện thoại");
         defaultTableModel.addColumn("Chức vụ");
+        defaultTableModel.addColumn("Tai khoản");
+        defaultTableModel.addColumn("Mật khẩu");
 //        
-        List<Employee_entity> emp = dao.getAllEmployee_234();
-        System.out.println(emp);
+        List<Employee_entity> emp = service.getAllEmployee_234();
+        
         for(Employee_entity e : emp){
-            defaultTableModel.addRow(new Object[]{e.getTennv(),e.getNgayVaoLam(),e.getSoDienThoai(),e.getChucVu()});
+            defaultTableModel.addRow(new Object[]{e.getId(),e.getTennv(),e.getNgayVaoLam(),e.getSoDienThoai(),e.getChucVu(),e.getUserName(),e.getPassword()});
+        }
+        defaultTableModelTB = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false; // khong cho phep nguoi dung Edit du lieu trong bang
+            }
+        };
+        tableTableManeger234.setModel(defaultTableModelTB);
+        defaultTableModelTB.addColumn("id");
+        defaultTableModelTB.addColumn("Tầng");
+        defaultTableModelTB.addColumn("Trạng thái");
+        List<Table> tbs = service.getAllTable_234();
+        
+        for(Table e : tbs){
+            defaultTableModelTB.addRow(new Object[]{e.getId(),e.getTang(),e.getBan(),});
+        }
+        defaultTableModelMN = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false; // khong cho phep nguoi dung Edit du lieu trong bang
+            }
+        };
+        tableDrinkManager234.setModel(defaultTableModelMN);
+        defaultTableModelMN.addColumn("id");
+        defaultTableModelMN.addColumn("Loại");
+        defaultTableModelMN.addColumn("Tên");
+        defaultTableModelMN.addColumn("Giá");
+        
+        List<Menu_entity> mns = service.getAllMenu_234();
+        
+        for(Menu_entity e : mns){
+            
+            defaultTableModelMN.addRow(new Object[]{e.getIdP(),e.getNameC(),e.getNameP(),e.getPrice()});
         }
     }
     public void panelListManager(){
@@ -104,12 +156,10 @@ public class Coffee_management_general extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         btnEditTable234 = new javax.swing.JLabel();
         btnAddTable234 = new javax.swing.JLabel();
-        btnSearchTableName234 = new javax.swing.JLabel();
-        textFieldTableName234 = new javax.swing.JTextField();
-        jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         btnDeleteTable234 = new javax.swing.JLabel();
         comboBoxFloor234 = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
         JpnMenu_Manager = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableDrinkManager234 = new javax.swing.JTable();
@@ -125,6 +175,7 @@ public class Coffee_management_general extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         btnDeleteDrink234 = new javax.swing.JLabel();
         comboBoxTypeDrink234 = new javax.swing.JComboBox<>();
+        jButton3 = new javax.swing.JButton();
         JpnAccount_Manager = new javax.swing.JPanel();
         btnSearchUser234 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -156,6 +207,7 @@ public class Coffee_management_general extends javax.swing.JFrame {
         textFieldTotalEmployee234 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jPanel4.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -317,15 +369,6 @@ public class Coffee_management_general extends javax.swing.JFrame {
             }
         });
 
-        btnSearchTableName234.setBackground(new java.awt.Color(255, 255, 255));
-        btnSearchTableName234.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnSearchTableName234.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/search.png"))); // NOI18N
-        btnSearchTableName234.setOpaque(true);
-
-        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(255, 255, 0));
-        jLabel35.setText("Tên bàn :");
-
         jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(255, 255, 0));
         jLabel36.setText("Lầu :");
@@ -348,6 +391,18 @@ public class Coffee_management_general extends javax.swing.JFrame {
         comboBoxFloor234.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         comboBoxFloor234.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LẦU 1 ", "LẦU 2", "LẦU 3", " " }));
         comboBoxFloor234.setToolTipText("");
+        comboBoxFloor234.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboBoxFloor234ItemStateChanged(evt);
+            }
+        });
+
+        jButton2.setText("Refresh");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Jpntable_ManagerLayout = new javax.swing.GroupLayout(Jpntable_Manager);
         Jpntable_Manager.setLayout(Jpntable_ManagerLayout);
@@ -360,13 +415,7 @@ public class Coffee_management_general extends javax.swing.JFrame {
                         .addComponent(jLabel36)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(comboBoxFloor234, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel35)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textFieldTableName234, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSearchTableName234, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(116, 116, 116))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(Jpntable_ManagerLayout.createSequentialGroup()
                         .addGroup(Jpntable_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Jpntable_ManagerLayout.createSequentialGroup()
@@ -381,8 +430,12 @@ public class Coffee_management_general extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addComponent(jLabel26)
                         .addGap(70, 70, 70))
-                    .addGroup(Jpntable_ManagerLayout.createSequentialGroup()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Jpntable_ManagerLayout.createSequentialGroup()
+                        .addGroup(Jpntable_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(Jpntable_ManagerLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addGap(50, 50, 50)
                         .addGroup(Jpntable_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAddTable234, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -395,15 +448,11 @@ public class Coffee_management_general extends javax.swing.JFrame {
             .addGroup(Jpntable_ManagerLayout.createSequentialGroup()
                 .addGroup(Jpntable_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Jpntable_ManagerLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addGroup(Jpntable_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSearchTableName234, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(Jpntable_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel35)
-                                .addComponent(textFieldTableName234, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel36)
-                                .addComponent(comboBoxFloor234, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(53, 53, 53)
+                        .addGap(40, 40, 40)
+                        .addGroup(Jpntable_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel36)
+                            .addComponent(comboBoxFloor234, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(59, 59, 59)
                         .addComponent(btnAddTable234, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
                         .addComponent(btnEditTable234, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -412,7 +461,9 @@ public class Coffee_management_general extends javax.swing.JFrame {
                     .addGroup(Jpntable_ManagerLayout.createSequentialGroup()
                         .addGap(94, 94, 94)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)))
-                .addGap(71, 71, 71)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
+                .addGap(37, 37, 37)
                 .addGroup(Jpntable_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Jpntable_ManagerLayout.createSequentialGroup()
                         .addGroup(Jpntable_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -495,6 +546,11 @@ public class Coffee_management_general extends javax.swing.JFrame {
                 textFieldNameDrink234ActionPerformed(evt);
             }
         });
+        textFieldNameDrink234.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                textFieldNameDrink234KeyReleased(evt);
+            }
+        });
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 0));
@@ -512,11 +568,28 @@ public class Coffee_management_general extends javax.swing.JFrame {
         btnDeleteDrink234.setToolTipText("");
         btnDeleteDrink234.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 1, 1, new java.awt.Color(0, 204, 204)));
         btnDeleteDrink234.setOpaque(true);
+        btnDeleteDrink234.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDeleteDrink234MouseClicked(evt);
+            }
+        });
 
         comboBoxTypeDrink234.setBackground(new java.awt.Color(204, 255, 204));
         comboBoxTypeDrink234.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         comboBoxTypeDrink234.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cà Phê", "Trà ", "Trà Sứa", "Sinh tố, Nước ép", " " }));
         comboBoxTypeDrink234.setToolTipText("");
+        comboBoxTypeDrink234.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboBoxTypeDrink234ItemStateChanged(evt);
+            }
+        });
+
+        jButton3.setText("Refresh");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout JpnMenu_ManagerLayout = new javax.swing.GroupLayout(JpnMenu_Manager);
         JpnMenu_Manager.setLayout(JpnMenu_ManagerLayout);
@@ -550,8 +623,12 @@ public class Coffee_management_general extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addComponent(jLabel20)
                         .addGap(70, 70, 70))
-                    .addGroup(JpnMenu_ManagerLayout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpnMenu_ManagerLayout.createSequentialGroup()
+                        .addGroup(JpnMenu_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(JpnMenu_ManagerLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addGap(61, 61, 61)
                         .addGroup(JpnMenu_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAddDrink234, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -581,7 +658,9 @@ public class Coffee_management_general extends javax.swing.JFrame {
                     .addGroup(JpnMenu_ManagerLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)))
-                .addGap(71, 71, 71)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3)
+                .addGap(37, 37, 37)
                 .addGroup(JpnMenu_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JpnMenu_ManagerLayout.createSequentialGroup()
                         .addGroup(JpnMenu_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -776,6 +855,18 @@ public class Coffee_management_general extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 0));
         jLabel2.setText("Chức Vụ:");
 
+        textFieldNameEmployee234.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                textFieldNameEmployee234KeyReleased(evt);
+            }
+        });
+
+        textFieldPosition234.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                textFieldPosition234KeyReleased(evt);
+            }
+        });
+
         btnSearchNameEmployee234.setBackground(new java.awt.Color(255, 255, 255));
         btnSearchNameEmployee234.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnSearchNameEmployee234.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/search.png"))); // NOI18N
@@ -843,6 +934,13 @@ public class Coffee_management_general extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/logo3.png"))); // NOI18N
 
+        jButton1.setText("Refresh");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout JpnEmployee_ManagerLayout = new javax.swing.GroupLayout(JpnEmployee_Manager);
         JpnEmployee_Manager.setLayout(JpnEmployee_ManagerLayout);
         JpnEmployee_ManagerLayout.setHorizontalGroup(
@@ -850,13 +948,6 @@ public class Coffee_management_general extends javax.swing.JFrame {
             .addGroup(JpnEmployee_ManagerLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(JpnEmployee_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JpnEmployee_ManagerLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addGap(39, 39, 39)
-                        .addGroup(JpnEmployee_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnAddEmployee234, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-                            .addComponent(btnEditEmployee234, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(44, 44, 44))
                     .addGroup(JpnEmployee_ManagerLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -883,7 +974,18 @@ public class Coffee_management_general extends javax.swing.JFrame {
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addComponent(jLabel9)
-                        .addGap(70, 70, 70))))
+                        .addGap(70, 70, 70))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpnEmployee_ManagerLayout.createSequentialGroup()
+                        .addGroup(JpnEmployee_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(JpnEmployee_ManagerLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGap(39, 39, 39)
+                        .addGroup(JpnEmployee_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnAddEmployee234, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                            .addComponent(btnEditEmployee234, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(44, 44, 44))))
         );
         JpnEmployee_ManagerLayout.setVerticalGroup(
             JpnEmployee_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -906,7 +1008,9 @@ public class Coffee_management_general extends javax.swing.JFrame {
                         .addComponent(btnSearchNameEmployee234, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)))
-                .addGap(71, 71, 71)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addGap(37, 37, 37)
                 .addGroup(JpnEmployee_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JpnEmployee_ManagerLayout.createSequentialGroup()
                         .addGroup(JpnEmployee_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -993,6 +1097,7 @@ public class Coffee_management_general extends javax.swing.JFrame {
     private void btnAddEmployee234MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddEmployee234MouseClicked
         AddEmployee ae = new AddEmployee();
         ae.setVisible(true);
+        
     }//GEN-LAST:event_btnAddEmployee234MouseClicked
 
     private void btnEditEmployee234MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditEmployee234MouseClicked
@@ -1011,7 +1116,19 @@ public class Coffee_management_general extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditTable234MouseClicked
 
     private void btnDeleteTable234MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteTable234MouseClicked
-        
+        int row = tableTableManeger234.getSelectedRow();
+        if (row ==-1){
+            JOptionPane.showMessageDialog(Coffee_management_general.this,"Vui lòng chọn bàn muốn xóa trươc","Lỗi",JOptionPane.ERROR_MESSAGE);
+        }else{
+            int id = Integer.valueOf(String.valueOf(tableTableManeger234.getValueAt(row,0)));
+            service.deleteTable(id);
+            defaultTableModelTB.setRowCount(0);
+            List<Table> tbs = service.getAllTable_234();
+
+            for(Table e : tbs){
+                defaultTableModelTB.addRow(new Object[]{e.getId(),e.getTang(),e.getBan(),});
+            }
+        }
     }//GEN-LAST:event_btnDeleteTable234MouseClicked
 
     private void btnAddDrink234MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddDrink234MouseClicked
@@ -1037,6 +1154,110 @@ public class Coffee_management_general extends javax.swing.JFrame {
     private void textFieldNameDrink234ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNameDrink234ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldNameDrink234ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        defaultTableModel.setRowCount(0);
+        List<Employee_entity> emp = service.getAllEmployee_234();
+        
+        for(Employee_entity e : emp){
+            System.out.println(e.getPassword());
+            defaultTableModel.addRow(new Object[]{e.getId(),e.getTennv(),e.getNgayVaoLam(),e.getSoDienThoai(),e.getChucVu(),e.getUserName(),e.getPassword()});
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void textFieldNameEmployee234KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldNameEmployee234KeyReleased
+        // TODO add your handling code here:
+        defaultTableModel.setRowCount(0);
+        List<Employee_entity> emp = service.searchEmployee_234(textFieldNameEmployee234.getText());
+        
+        for(Employee_entity e : emp){
+            System.out.println(e.getPassword());
+            defaultTableModel.addRow(new Object[]{e.getId(),e.getTennv(),e.getNgayVaoLam(),e.getSoDienThoai(),e.getChucVu(),e.getUserName(),e.getPassword()});
+        }
+    }//GEN-LAST:event_textFieldNameEmployee234KeyReleased
+
+    private void textFieldPosition234KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldPosition234KeyReleased
+        // TODO add your handling code here:
+        defaultTableModel.setRowCount(0);
+        List<Employee_entity> emp = service.searchCVEmployee_234(textFieldPosition234.getText());
+        
+        for(Employee_entity e : emp){
+            System.out.println(e.getPassword());
+            defaultTableModel.addRow(new Object[]{e.getId(),e.getTennv(),e.getNgayVaoLam(),e.getSoDienThoai(),e.getChucVu(),e.getUserName(),e.getPassword()});
+        }
+    }//GEN-LAST:event_textFieldPosition234KeyReleased
+
+    private void comboBoxFloor234ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxFloor234ItemStateChanged
+        // TODO add your handling code here:
+        defaultTableModelTB.setRowCount(0);
+        List<Table> tbs = service.getAllTable_234(comboBoxFloor234.getSelectedIndex()+1);
+        
+        for(Table e : tbs){
+            defaultTableModelTB.addRow(new Object[]{e.getId(),e.getTang(),e.getBan(),});
+        }
+    }//GEN-LAST:event_comboBoxFloor234ItemStateChanged
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        defaultTableModelTB.setRowCount(0);
+        List<Table> tbs = service.getAllTable_234();
+        
+        for(Table e : tbs){
+            defaultTableModelTB.addRow(new Object[]{e.getId(),e.getTang(),e.getBan(),});
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void comboBoxTypeDrink234ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxTypeDrink234ItemStateChanged
+        // TODO add your handling code here:
+        defaultTableModelMN.setRowCount(0);
+            List<Menu_entity> mns = service.getAllMenu1_234(String.valueOf(comboBoxTypeDrink234.getSelectedItem()).trim());
+        
+        for(Menu_entity e : mns){
+            
+            defaultTableModelMN.addRow(new Object[]{e.getIdP(),e.getNameC(),e.getNameP(),e.getPrice()});
+        }
+    }//GEN-LAST:event_comboBoxTypeDrink234ItemStateChanged
+
+    private void textFieldNameDrink234KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textFieldNameDrink234KeyReleased
+        // TODO add your handling code here:
+         defaultTableModelMN.setRowCount(0);
+            List<Menu_entity> mns = service.getAllMenu_234(String.valueOf(textFieldNameDrink234.getText()).trim());
+        
+        for(Menu_entity e : mns){
+            
+            defaultTableModelMN.addRow(new Object[]{e.getIdP(),e.getNameC(),e.getNameP(),e.getPrice()});
+        }
+    }//GEN-LAST:event_textFieldNameDrink234KeyReleased
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        defaultTableModelMN.setRowCount(0);
+            List<Menu_entity> mns = service.getAllMenu_234();
+        
+        for(Menu_entity e : mns){
+            
+            defaultTableModelMN.addRow(new Object[]{e.getIdP(),e.getNameC(),e.getNameP(),e.getPrice()});
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btnDeleteDrink234MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteDrink234MouseClicked
+        // TODO add your handling code here:
+        int row = tableDrinkManager234.getSelectedRow();
+        if (row ==-1){
+            JOptionPane.showMessageDialog(Coffee_management_general.this,"Vui lòng chọn bàn muốn xóa trươc","Lỗi",JOptionPane.ERROR_MESSAGE);
+        }else{
+            int id = Integer.valueOf(String.valueOf(tableDrinkManager234.getValueAt(row,0)));
+            service.deleteMenu(id);
+            defaultTableModelMN.setRowCount(0);
+            List<Menu_entity> mns = service.getAllMenu_234();
+        
+        for(Menu_entity e : mns){
+            
+            defaultTableModelMN.addRow(new Object[]{e.getIdP(),e.getNameC(),e.getNameP(),e.getPrice()});
+        }
+        }
+    }//GEN-LAST:event_btnDeleteDrink234MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1097,10 +1318,12 @@ public class Coffee_management_general extends javax.swing.JFrame {
     private javax.swing.JLabel btnSearchNameEmployee234;
     private javax.swing.JLabel btnSearchNameEmployee_234;
     private javax.swing.JLabel btnSearchPosition234;
-    private javax.swing.JLabel btnSearchTableName234;
     private javax.swing.JLabel btnSearchUser234;
     private javax.swing.JComboBox<String> comboBoxFloor234;
     private javax.swing.JComboBox<String> comboBoxTypeDrink234;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1116,7 +1339,6 @@ public class Coffee_management_general extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1138,7 +1360,6 @@ public class Coffee_management_general extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldNameEmployee234;
     private javax.swing.JTextField textFieldNameUser234;
     private javax.swing.JTextField textFieldPosition234;
-    private javax.swing.JTextField textFieldTableName234;
     private javax.swing.JTextField textFieldTotalAccount234;
     private javax.swing.JTextField textFieldTotalDrink234;
     private javax.swing.JTextField textFieldTotalEmployee234;
