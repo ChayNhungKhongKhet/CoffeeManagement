@@ -1856,8 +1856,17 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="PanelNorth340" max="32767" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="PanelNorth340" max="32767" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
+                                          <Component id="jPanel22" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                                   <Component id="PanelCenter338" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="PanelSouth338" alignment="0" max="32767" attributes="0"/>
@@ -1866,16 +1875,13 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
+                                  <Component id="PanelNorth340" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="64" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="PanelNorth340" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="435" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="PanelCenter338" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="PanelCenter338" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jPanel22" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="PanelSouth338" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -1985,7 +1991,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="84" max="32767" attributes="0"/>
+                                          <EmptySpace pref="77" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="jLabel1" pref="82" max="32767" attributes="0"/>
                                               <Component id="lbTKHDB338" max="32767" attributes="0"/>
@@ -1999,7 +2005,7 @@
                                 <Component class="javax.swing.JLabel" name="jLabel2">
                                   <Properties>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Segoe UI" size="18" style="1"/>
+                                      <Font name="Segoe UI" size="24" style="1"/>
                                     </Property>
                                     <Property name="horizontalAlignment" type="int" value="0"/>
                                     <Property name="text" type="java.lang.String" value="H&#xf3;a &#x111;&#x1a1;n b&#xe1;n"/>
@@ -2050,7 +2056,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="85" max="32767" attributes="0"/>
+                                          <EmptySpace pref="78" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="jLabel11" pref="75" max="32767" attributes="0"/>
                                               <Component id="lbTKHBN338" max="32767" attributes="0"/>
@@ -2064,7 +2070,7 @@
                                 <Component class="javax.swing.JLabel" name="jLabel4">
                                   <Properties>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Segoe UI" size="18" style="1"/>
+                                      <Font name="Segoe UI" size="24" style="1"/>
                                     </Property>
                                     <Property name="horizontalAlignment" type="int" value="0"/>
                                     <Property name="text" type="java.lang.String" value="H&#xf3;a &#x111;&#x1a1;n nh&#x1ead;p h&#xe0;ng"/>
@@ -2129,7 +2135,7 @@
                                 <Component class="javax.swing.JLabel" name="jLabel5">
                                   <Properties>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Segoe UI" size="18" style="1"/>
+                                      <Font name="Segoe UI" size="24" style="1"/>
                                     </Property>
                                     <Property name="horizontalAlignment" type="int" value="0"/>
                                     <Property name="text" type="java.lang.String" value="Nh&#xe2;n vi&#xea;n"/>
@@ -2241,6 +2247,26 @@
                               </Properties>
                             </Component>
                           </SubComponents>
+                        </Container>
+                        <Container class="javax.swing.JPanel" name="jPanel22">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                            </Property>
+                          </Properties>
+
+                          <Layout>
+                            <DimensionLayout dim="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <EmptySpace min="0" pref="469" max="32767" attributes="0"/>
+                              </Group>
+                            </DimensionLayout>
+                            <DimensionLayout dim="1">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <EmptySpace min="0" pref="337" max="32767" attributes="0"/>
+                              </Group>
+                            </DimensionLayout>
+                          </Layout>
                         </Container>
                       </SubComponents>
                     </Container>

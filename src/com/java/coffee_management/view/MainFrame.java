@@ -62,10 +62,10 @@ public class MainFrame extends javax.swing.JFrame {
         buttonListManager();
         panelListViewWarehouse();
         buttonListViewWarehouse();
-        setTableTKHoaDon();
-        setTableTKKho();
-        tongtienthuve();
-        tongtiennhapkho();
+        setTableTKHoaDon338();
+        setTableTKKho338();
+        tongtienthuve338();
+        tongtiennhapkho338();
     }
     
     public void panelListStatiscal() {
@@ -179,16 +179,16 @@ public class MainFrame extends javax.swing.JFrame {
 /////////////////////////////////////////////////////THONG KE////////////////////////////////////////////////////////////////////
     // SHOW DATA
     /// BILL
-    public void setTableTKHoaDon() {
+    public void setTableTKHoaDon338() {
         String columns[] = {
             "Mã hóa đơn", "Thời gian", "Bàn", "Thành tiền"
         };
         dftableTKHoaDonModel.setColumnIdentifiers(columns);
         tblReceipt338.setModel(dftableTKHoaDonModel);
-        showDataTKHoaDon();
+        showDataTKHoaDon338();
     }
     
-    public void showDataTKHoaDon() {
+    public void showDataTKHoaDon338() {
         try {
             ResultSet rs = sqlHandler.getAllDataTKHoaDon338();
             while (rs.next()) {
@@ -203,16 +203,16 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // KHO
-    public void setTableTKKho() {
+    public void setTableTKKho338() {
         String columns[] = {
             "Mã hóa đơn", "Mã nhà cung cấp", "Tên nhà cung cấp", "Thời gian", "Mã nguyên liệu", "Số lượng", "Giá", "Thành tiền"
         };
         dftableTKKhoModel.setColumnIdentifiers(columns);
         tbSale338.setModel(dftableTKKhoModel);
-        showDataTKKho();
+        showDataTKKho338();
     }
     
-    public void showDataTKKho() {
+    public void showDataTKKho338() {
         try {
             ResultSet rs = sqlHandler.getAllDataTKKho338();
             while (rs.next()) {
@@ -225,14 +225,14 @@ public class MainFrame extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-     public void clearTableTKKho(DefaultTableModel dftableModel) {
+     public void clearTableTKKho338(DefaultTableModel dftableModel) {
         int n = dftableModel.getRowCount() - 1;
         for (int i = n; i >= 0; i--) {
             dftableModel.removeRow(i);
         }
     }
 
-    public void showDataTKKhoDesc() {
+    public void showDataTKKhoDesc338() {
         try {
             ResultSet rs = sqlHandler.getAllDataTKKhoDesc338();
             while (rs.next()) {
@@ -246,7 +246,7 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }
     
-    public void showDataTKKhoAsc() {
+    public void showDataTKKhoAsc338() {
         try {
             ResultSet rs = sqlHandler.getAllDataTKKhoAsc338();
             while (rs.next()) {
@@ -263,7 +263,7 @@ public class MainFrame extends javax.swing.JFrame {
 /////////////////////////////////////////////////////THONG KE////////////////////////////////////////////////////////////////////
     // Tổng tiền
 
-    public void tongtienthuve() {
+    public void tongtienthuve338() {
         double tongtien = 0;
         int row = tblReceipt338.getRowCount();
         for (int i = 0; i < row; i++) {
@@ -272,7 +272,7 @@ public class MainFrame extends javax.swing.JFrame {
         lbCollectedMoney338.setText("" +  df.format(tongtien) + "  VNĐ");
     }
     
-     public void tongtiennhapkho() {
+     public void tongtiennhapkho338() {
         double tongtien = 0;
         int row = tbSale338.getRowCount();
         for (int i = 0; i < row; i++) {
@@ -427,6 +427,7 @@ public class MainFrame extends javax.swing.JFrame {
         PanelSouth338 = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
+        jPanel22 = new javax.swing.JPanel();
         managePanel = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         JlbEmloyee_manager = new javax.swing.JLabel();
@@ -1671,7 +1672,7 @@ public class MainFrame extends javax.swing.JFrame {
         PanelTKHD.setBackground(new java.awt.Color(255, 255, 255));
         PanelTKHD.setPreferredSize(new java.awt.Dimension(375, 220));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Hóa đơn bán");
 
@@ -1697,7 +1698,7 @@ public class MainFrame extends javax.swing.JFrame {
             PanelTKHDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelTKHDLayout.createSequentialGroup()
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addGroup(PanelTKHDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
                     .addComponent(lbTKHDB338, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1707,7 +1708,7 @@ public class MainFrame extends javax.swing.JFrame {
         PanelTNV.setBackground(new java.awt.Color(153, 255, 153));
         PanelTNV.setPreferredSize(new java.awt.Dimension(375, 220));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Hóa đơn nhập hàng");
 
@@ -1733,7 +1734,7 @@ public class MainFrame extends javax.swing.JFrame {
             PanelTNVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelTNVLayout.createSequentialGroup()
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                 .addGroup(PanelTNVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
                     .addComponent(lbTKHBN338, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1743,7 +1744,7 @@ public class MainFrame extends javax.swing.JFrame {
         PanelTKHD2.setBackground(new java.awt.Color(102, 255, 255));
         PanelTKHD2.setPreferredSize(new java.awt.Dimension(375, 190));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Nhân viên");
 
@@ -1859,26 +1860,44 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(154, 154, 154))
         );
 
+        jPanel22.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 469, Short.MAX_VALUE)
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 337, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout PanelAllSale338Layout = new javax.swing.GroupLayout(PanelAllSale338);
         PanelAllSale338.setLayout(PanelAllSale338Layout);
         PanelAllSale338Layout.setHorizontalGroup(
             PanelAllSale338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAllSale338Layout.createSequentialGroup()
-                .addComponent(PanelNorth340, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelAllSale338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelAllSale338Layout.createSequentialGroup()
+                        .addComponent(PanelNorth340, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(PanelAllSale338Layout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(PanelCenter338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(PanelSouth338, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PanelAllSale338Layout.setVerticalGroup(
             PanelAllSale338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAllSale338Layout.createSequentialGroup()
+                .addComponent(PanelNorth340, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(PanelAllSale338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelAllSale338Layout.createSequentialGroup()
-                        .addComponent(PanelNorth340, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(435, 435, 435))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAllSale338Layout.createSequentialGroup()
-                        .addComponent(PanelCenter338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                    .addComponent(PanelCenter338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelSouth338, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -4274,20 +4293,20 @@ public class MainFrame extends javax.swing.JFrame {
         datefrom = sf.format(jDateChooser3.getDate());
         dateto = sf.format(jDateChooser4.getDate());
         
-        clearTableTKKho(dftableTKHoaDonModel);
-        setTableTKHoaDonDate();
+        clearTableTKKho338(dftableTKHoaDonModel);
+        setTableTKHoaDonDate338();
     }//GEN-LAST:event_btnRevenue338ActionPerformed
 
-    public void setTableTKHoaDonDate() {
+    public void setTableTKHoaDonDate338() {
         String columns[] = {
             "Mã hóa đơn", "Thời gian", "Bàn", "Thành tiền"
         };
         dftableTKHoaDonModel.setColumnIdentifiers(columns);
         tblReceipt338.setModel(dftableTKHoaDonModel);
-        showDataTKHoaDon();
+        showDataTKHoaDon338();
     }
     
-    public void showDataTKHoaDonDate() {
+    public void showDataTKHoaDonDate338() {
         try {
             ResultSet rs = sqlHandler.getAllDataTKHoaDonDate338(datefrom, dateto);
             while (rs.next()) {
@@ -4333,13 +4352,13 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         datefrom = sf.format(jDateChooser2.getDate());
         dateto = sf.format(jDateChooser1.getDate());
-        clearTableTKKho(dftableTKKhoModel);
-        setTableTKKhoDate();
+        clearTableTKKho338(dftableTKKhoModel);
+        setTableTKKhoDate338();
     }//GEN-LAST:event_btnWareH338ActionPerformed
 
-    public void showDataDateTKKho() {
+    public void showDataDateTKKho338() {
         try {
-            ResultSet rs = sqlHandler.getDataDate(datefrom, dateto);
+            ResultSet rs = sqlHandler.getDataDate338(datefrom, dateto);
             while (rs.next()) {
                 Object[] rows = {
                     rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)
@@ -4351,13 +4370,13 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }
     
-    public void setTableTKKhoDate() {
+    public void setTableTKKhoDate338() {
         String columns[] = {
             "Mã hóa đơn", "Mã nhà cung cấp", "Tên nhà cung cấp", "Thời gian", "Mã nguyên liệu", "Số lượng", "Giá", "Thành tiền"
         };
         dftableTKKhoModel.setColumnIdentifiers(columns);
         tbSale338.setModel(dftableTKKhoModel);
-        showDataDateTKKho();
+        showDataDateTKKho338();
     }
     
     
@@ -4704,12 +4723,12 @@ public class MainFrame extends javax.swing.JFrame {
     private void cbbMoneyGroup338ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbbMoneyGroup338ActionPerformed
         // TODO add your handling code here:
         if (cbbMoneyGroup338.getSelectedItem().equals("Giảm dần")){
-            clearTableTKKho(dftableTKKhoModel);
-            showDataTKKhoDesc();
+            clearTableTKKho338(dftableTKKhoModel);
+            showDataTKKhoDesc338();
         }
         if (cbbMoneyGroup338.getSelectedItem().equals("Tăng dần")){
-            clearTableTKKho(dftableTKKhoModel);
-            showDataTKKhoAsc();
+            clearTableTKKho338(dftableTKKhoModel);
+            showDataTKKhoAsc338();
         }
     }//GEN-LAST:event_cbbMoneyGroup338ActionPerformed
 
@@ -4994,6 +5013,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;

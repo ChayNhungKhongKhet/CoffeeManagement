@@ -39,7 +39,7 @@ public class ConnectSQL {
         }
     }
 
-    public ResultSet getData(String query) {
+    public ResultSet getData338(String query) {
         ResultSet rs = null;
         try {
             Statement st = conn.createStatement();
@@ -50,7 +50,7 @@ public class ConnectSQL {
         return rs;
     }
 
-    public void excute(String query) {
+    public void excute338(String query) {
         try {
             Statement st = conn.createStatement();
             st.executeUpdate(query);
