@@ -1,4 +1,5 @@
 ﻿create database coffee_management
+--drop database coffee_management
 go
 use coffee_management
 go
@@ -29,6 +30,60 @@ create table employee_role
 	primary key(employee_id,role_id)
 );
 go
+create table purchase
+(
+	staffName nvarchar(50),
+	id int ,
+	couponCode char(10) primary key,
+	dateAdded varchar(50),
+	supplierName nvarchar(50),
+	supplierCode char(10),
+	nameOfMaterials nvarchar(50),
+	amount int,
+	typeOfRawMaterial nvarchar(50),
+	unitPrice int,
+	unit nvarchar(50),
+)
+go
+
+create table warehouse
+(
+	[name] nvarchar(50),
+	id int ,
+	date_added varchar(50),
+	coupon_code char(10),
+	material_name nvarchar(50),
+	material_code char(10),
+	[type] nvarchar(50),
+	unit nvarchar(50),
+	amount int,
+	primary key(id, material_code)
+)
+go
+create table inventory
+(
+	id int ,
+	since varchar(50),
+	to_day varchar(50),
+	code_check char(10),
+	name_of_materials nvarchar(50),
+	material_code char(10) primary key,
+	original_number int,
+	amount_of_difference int,
+	reason nvarchar(50),
+	handle nvarchar(50)
+	
+)
+go
+alter table purchase
+	add constraint FK_purchase_id foreign key(id) 
+			references employee(id)
+			on update cascade
+go
+alter table warehouse
+	add constraint FK_warehouse_id foreign key(id) 
+			references employee(id)
+			on update cascade
 
 alter table employee_role
 	add constraint FK_employee_role_employee_id foreign key(employee_id) 
@@ -80,7 +135,12 @@ create table ingredient
 id int identity primary key,
 ingredient_category varchar(20),
 [name] nvarchar(50),
-degree nvarchar(15)
+degree nvarchar(15),
+price int,
+supplier nvarchar(50),
+total_available int,
+quantity_consumed int,
+import_quantity nchar(10)
 );
 go
 
