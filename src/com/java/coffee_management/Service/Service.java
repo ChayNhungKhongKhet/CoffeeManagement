@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.java.coffe_management.Service;
+package com.java.coffee_management.Service;
 
 import com.java.coffee_management.Dao.Dao;
 import com.java.coffee_management.entity.Employee_entity;
@@ -85,5 +85,8 @@ public class Service {
     }
     public void deleteMenu(int i){
         dao.deleteMenu(i);
+    }
+    public int login_234(String userName, String pass){
+        return dao.login_234(userName,pass);
     }
 }

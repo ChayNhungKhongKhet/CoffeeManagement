@@ -445,4 +445,18 @@ public class Dao {
            ex.printStackTrace();
        }
    }
+   public int login_234(String userName, String pass){
+       Connection connect = ConnectionDB.Connect_JDBC();
+       String sql = "select * from employee where [user_name]= '"+userName+"' and [password]= '"+pass+"'";
+       try{
+           PreparedStatement pr = connect.prepareStatement(sql);
+           ResultSet rs = pr.executeQuery();
+           while (rs.next()){
+               return 1;
+           }
+       }catch(Exception ex){
+           ex.printStackTrace();
+       }
+       return 0;
+   }
 }

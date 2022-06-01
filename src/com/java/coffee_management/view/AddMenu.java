@@ -4,7 +4,7 @@
  */
 package com.java.coffee_management.view;
 
-import com.java.coffe_management.Service.Service;
+import com.java.coffee_management.Service.Service;
 import com.java.coffee_management.entity.category;
 import java.util.ArrayList;
 import java.util.List;
@@ -127,6 +127,11 @@ public class AddMenu extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("HUỶ BỎ ");
         jLabel6.setOpaque(true);
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 100, 23));
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 166, -1));
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 166, -1));
@@ -171,7 +176,14 @@ public class AddMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         service.addMenu(String.valueOf(jComboBox1.getSelectedItem()),jTextField2.getText(),Float.valueOf(String.valueOf(jTextField3.getText())));
         this.dispose();
+        new Coffee_management_general(2).setVisible(true);
     }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        new Coffee_management_general(2).setVisible(true);
+    }//GEN-LAST:event_jLabel6MouseClicked
 
     /**
      * @param args the command line arguments

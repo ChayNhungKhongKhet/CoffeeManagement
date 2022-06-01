@@ -4,7 +4,7 @@
  */
 package com.java.coffee_management.view;
 
-import com.java.coffe_management.Service.Service;
+import com.java.coffee_management.Service.Service;
 
 /**
  *
