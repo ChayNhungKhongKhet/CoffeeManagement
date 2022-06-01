@@ -5,6 +5,7 @@
  */
 package com.java.coffee_management.view;
 
+import com.java.coffee_management.view.sale.Quantity;
 import javax.swing.JPanel;
 
 /**
