@@ -75,13 +75,6 @@ create table inventory
 	
 )
 go
-alter table inventory
-add CONSTRAINT fk_material_code foreign key (material_code, id) references warehouse(material_code, id)
-
-drop table inventory
-
-
-go
 alter table purchase
 	add constraint FK_purchase_id foreign key(id) 
 			references employee(id)
