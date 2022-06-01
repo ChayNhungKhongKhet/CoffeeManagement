@@ -4,17 +4,21 @@
  */
 package com.java.coffee_management.view;
 
+import com.java.coffee_management.Service.Service;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Admin
  */
+
 public class SignInFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form SignInFrame
      */
+    Service service = new Service();
     public SignInFrame() {
         initComponents();
         setLocationRelativeTo(null);
@@ -36,6 +40,7 @@ public class SignInFrame extends javax.swing.JFrame {
         btnSignIn307 = new javax.swing.JButton();
         labelForgetPass307 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Sign in"); // NOI18N
@@ -79,6 +84,11 @@ public class SignInFrame extends javax.swing.JFrame {
         btnSignIn307.setBackground(new java.awt.Color(69, 32, 16));
         btnSignIn307.setForeground(new java.awt.Color(255, 255, 255));
         btnSignIn307.setText("Sign in");
+        btnSignIn307.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignIn307ActionPerformed(evt);
+            }
+        });
 
         labelForgetPass307.setForeground(new java.awt.Color(255, 255, 255));
         labelForgetPass307.setText("Forget Password ?");
@@ -92,6 +102,13 @@ public class SignInFrame extends javax.swing.JFrame {
         });
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/java/coffee_management/image/logo.png"))); // NOI18N
+
+        jCheckBox1.setText("Hiển thị mật khẩu");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -114,12 +131,13 @@ public class SignInFrame extends javax.swing.JFrame {
                         .addGap(50, 50, 50)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(btnSignIn307, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addComponent(labelForgetPass307))
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(btnSignIn307, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addContainerGap())
@@ -139,15 +157,18 @@ public class SignInFrame extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(txtPassword307, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(btnSignIn307))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(labelForgetPass307))
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jCheckBox1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnSignIn307)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(47, 47, 47)
+                                .addComponent(labelForgetPass307)))))
                 .addGap(21, 21, 21))
         );
 
@@ -194,6 +215,22 @@ public class SignInFrame extends javax.swing.JFrame {
         txtUser307.setText("");
     }//GEN-LAST:event_txtUser307FocusGained
 
+    private void btnSignIn307ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignIn307ActionPerformed
+        // TODO add your handling code here:
+        int kt = service.login_234(txtUser307.getText(), String.valueOf(txtPassword307.getPassword()));
+        if (kt==1){
+            this.dispose();
+            new MainFrame().setVisible(true);
+        }else JOptionPane.showMessageDialog(rootPane, "Sai thông tin tài khoản hoặc mật khẩu","Đăng nhập thất bại", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_btnSignIn307ActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+        if (jCheckBox1.isSelected()){
+            txtPassword307.setEchoChar((char)0);
+        }else txtPassword307.setEchoChar('*');
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -231,6 +268,7 @@ public class SignInFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignIn307;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
