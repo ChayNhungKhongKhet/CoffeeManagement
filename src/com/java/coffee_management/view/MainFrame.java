@@ -8,6 +8,7 @@ import com.java.coffee_management.dao.SQLHandler;
 import com.sun.jdi.connect.spi.Connection;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -32,6 +33,12 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.text.SimpleDateFormat;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
  *
@@ -50,7 +57,7 @@ public class MainFrame extends javax.swing.JFrame {
     public DefaultTableModel dftableTKHoaDonModel = new DefaultTableModel();
     public DefaultTableModel dftableTKKhoModel = new DefaultTableModel();
     String datefrom, dateto;
-    
+    double tongtienhd, tongtiennhap, tongluongnv;
     public MainFrame() {
         initComponents();
         setLocationRelativeTo(null);
@@ -66,6 +73,7 @@ public class MainFrame extends javax.swing.JFrame {
         setTableTKKho338();
         tongtienthuve338();
         tongtiennhapkho338();
+        bieudo338();
     }
     
     public void panelListStatiscal() {
@@ -270,6 +278,8 @@ public class MainFrame extends javax.swing.JFrame {
             tongtien += Double.valueOf(tblReceipt338.getModel().getValueAt(i, 3).toString()) * 1000;
         }
         lbCollectedMoney338.setText("" +  df.format(tongtien) + "  VNĐ");
+        tongtienhd = Double.valueOf(df.format(tongtien));
+        
     }
     
      public void tongtiennhapkho338() {
@@ -279,7 +289,28 @@ public class MainFrame extends javax.swing.JFrame {
             tongtien += Double.valueOf(tbSale338.getModel().getValueAt(i, 7).toString()) * 1000;
         }
         lbSalesMoney_338.setText("" +  df.format(tongtien) + "  VNĐ");
+        tongtiennhap = Double.valueOf(df.format(tongtien));
     }
+     
+     public void bieudo338() {
+         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        
+        dataset.addValue(tongtienhd, "Tiền", "Tổng tiền hóa đơn");
+        dataset.addValue(tongtiennhap, "Tiền", "Tổng tiền nhập");
+        dataset.addValue(60000, "Tiền", "Tổng tiền lương nhân viên");
+        JFreeChart barChart = ChartFactory.createBarChart("BIỂU ĐỒ THỐNG KÊ", "Loại", "Tiền",dataset);
+        CategoryPlot lineCategoryPlot = barChart.getCategoryPlot();
+        lineCategoryPlot.setRangeGridlinePaint(Color.BLACK);
+        lineCategoryPlot.setBackgroundPaint(Color.white);
+
+        ChartPanel chartPanel = new ChartPanel(barChart);
+        chartPanel.setPreferredSize(new Dimension(panelChart338.getWidth(), 300));
+        panelChart338.removeAll();
+        panelChart338.setLayout(new CardLayout());
+        panelChart338.add(chartPanel);
+        panelChart338.validate();
+        panelChart338.repaint();
+     }
      
  //////////////////////////////////////////////////////////THONG KE/////////////////////////////////////////////////
      
@@ -427,7 +458,7 @@ public class MainFrame extends javax.swing.JFrame {
         PanelSouth338 = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
-        jPanel22 = new javax.swing.JPanel();
+        panelChart338 = new javax.swing.JPanel();
         managePanel = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         JlbEmloyee_manager = new javax.swing.JLabel();
@@ -1860,17 +1891,17 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(154, 154, 154))
         );
 
-        jPanel22.setBackground(new java.awt.Color(255, 255, 255));
+        panelChart338.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
-        jPanel22.setLayout(jPanel22Layout);
-        jPanel22Layout.setHorizontalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 469, Short.MAX_VALUE)
+        javax.swing.GroupLayout panelChart338Layout = new javax.swing.GroupLayout(panelChart338);
+        panelChart338.setLayout(panelChart338Layout);
+        panelChart338Layout.setHorizontalGroup(
+            panelChart338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 776, Short.MAX_VALUE)
         );
-        jPanel22Layout.setVerticalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 337, Short.MAX_VALUE)
+        panelChart338Layout.setVerticalGroup(
+            panelChart338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout PanelAllSale338Layout = new javax.swing.GroupLayout(PanelAllSale338);
@@ -1882,10 +1913,10 @@ public class MainFrame extends javax.swing.JFrame {
                     .addGroup(PanelAllSale338Layout.createSequentialGroup()
                         .addComponent(PanelNorth340, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(PanelAllSale338Layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAllSale338Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(panelChart338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(175, 175, 175)))
                 .addComponent(PanelCenter338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(PanelSouth338, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -1893,11 +1924,15 @@ public class MainFrame extends javax.swing.JFrame {
             PanelAllSale338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAllSale338Layout.createSequentialGroup()
                 .addComponent(PanelNorth340, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(PanelAllSale338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelCenter338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(PanelAllSale338Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                        .addComponent(PanelCenter338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(PanelAllSale338Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(panelChart338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(PanelSouth338, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1909,7 +1944,10 @@ public class MainFrame extends javax.swing.JFrame {
         );
         PanelSales338Layout.setVerticalGroup(
             PanelSales338Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelAllSale338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(PanelSales338Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(PanelAllSale338, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PanelDetails338Layout = new javax.swing.GroupLayout(PanelDetails338);
@@ -5013,7 +5051,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -5126,6 +5163,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel mainPanel307;
     private javax.swing.JPanel managePanel;
     private javax.swing.JPanel panelAll338;
+    private javax.swing.JPanel panelChart338;
     private javax.swing.JPanel panelReservations320;
     private javax.swing.JPanel sellPanel;
     private javax.swing.JTable tbSalary307;
