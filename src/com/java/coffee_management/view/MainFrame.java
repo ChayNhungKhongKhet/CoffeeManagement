@@ -8,7 +8,7 @@ import com.java.coffee_management.Dao.Dao;
 import com.java.coffee_management.Service.Service;
 import com.java.coffee_management.model.Employee_entity;
 import com.java.coffee_management.model.Menu_entity;
-import com.java.coffee_management.model.Table;
+import com.java.coffee_management.model.Table234;
 import com.java.coffee_management.model.category;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -93,9 +93,9 @@ public class MainFrame extends javax.swing.JFrame {
         defaultTableModelTB.addColumn("id");
         defaultTableModelTB.addColumn("Tầng");
         defaultTableModelTB.addColumn("Trạng thái");
-        List<Table> tbs = service.getAllTable_234();
+        List<Table234> tbs = service.getAllTable_234();
         
-        for(Table e : tbs){
+        for(Table234 e : tbs){
             defaultTableModelTB.addRow(new Object[]{e.getId(),e.getTang(),e.getBan(),});
         }
         defaultTableModelMN = new DefaultTableModel() {
@@ -4518,9 +4518,9 @@ public class MainFrame extends javax.swing.JFrame {
             int id = Integer.valueOf(String.valueOf(tableTableManeger234.getValueAt(row, 0)));
             service.deleteTable(id);
             defaultTableModelTB.setRowCount(0);
-            List<Table> tbs = service.getAllTable_234();
+            List<Table234> tbs = service.getAllTable_234();
 
-            for (Table e : tbs) {
+            for (Table234 e : tbs) {
                 defaultTableModelTB.addRow(new Object[]{e.getId(), e.getTang(), e.getBan(),});
             }
         }
@@ -4529,9 +4529,9 @@ public class MainFrame extends javax.swing.JFrame {
     private void comboBoxFloor234ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxFloor234ItemStateChanged
         // TODO add your handling code here:
         defaultTableModelTB.setRowCount(0);
-        List<Table> tbs = service.getAllTable_234(comboBoxFloor234.getSelectedIndex() + 1);
+        List<Table234> tbs = service.getAllTable_234(comboBoxFloor234.getSelectedIndex() + 1);
 
-        for (Table e : tbs) {
+        for (Table234 e : tbs) {
             defaultTableModelTB.addRow(new Object[]{e.getId(), e.getTang(), e.getBan(),});
         }
     }//GEN-LAST:event_comboBoxFloor234ItemStateChanged
@@ -4539,9 +4539,9 @@ public class MainFrame extends javax.swing.JFrame {
     private void btnRefresh1_234ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefresh1_234ActionPerformed
         // TODO add your handling code here:
         defaultTableModelTB.setRowCount(0);
-        List<Table> tbs = service.getAllTable_234();
+        List<Table234> tbs = service.getAllTable_234();
 
-        for (Table e : tbs) {
+        for (Table234 e : tbs) {
             defaultTableModelTB.addRow(new Object[]{e.getId(), e.getTang(), e.getBan(),});
         }
     }//GEN-LAST:event_btnRefresh1_234ActionPerformed

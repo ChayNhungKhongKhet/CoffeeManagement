@@ -6,7 +6,7 @@ package com.java.coffee_management.Dao;
 
 
 import com.java.coffee_management.model.Employee_entity;
-import com.java.coffee_management.model.Table;
+import com.java.coffee_management.model.Table234;
 import com.java.coffee_management.model.employee_role;
 import com.java.coffee_management.model.role;
 import com.java.coffee_management.model.Menu_entity;
@@ -89,15 +89,15 @@ public class Dao {
        }
        return empl;
    }
-    public List<Table> getAllTable_234(){
-       List<Table> empl = new ArrayList<>();
+    public List<Table234> getAllTable_234(){
+       List<Table234> empl = new ArrayList<>();
        Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select * from [table]";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
            ResultSet rs = pr.executeQuery();
            while(rs.next()){
-               Table tk = new Table();
+               Table234 tk = new Table234();
                tk.setId(rs.getInt("id"));
                tk.setTang(rs.getString("area"));
                tk.setBan(rs.getString("state"));
@@ -108,15 +108,15 @@ public class Dao {
        }
        return empl;
    }
-    public List<Table> getAllTable_234(int tt){
-       List<Table> empl = new ArrayList<>();
+    public List<Table234> getAllTable_234(int tt){
+       List<Table234> empl = new ArrayList<>();
        Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select * from [table] where area like '%"+tt+"%'";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
            ResultSet rs = pr.executeQuery();
            while(rs.next()){
-               Table tk = new Table();
+               Table234 tk = new Table234();
                tk.setId(rs.getInt("id"));
                tk.setTang(rs.getString("area"));
                tk.setBan(rs.getString("state"));
@@ -127,15 +127,15 @@ public class Dao {
        }
        return empl;
    }
-    public List<Table> getAllTableById_234(int  tt){
-       List<Table> empl = new ArrayList<>();
+    public List<Table234> getAllTableById_234(int  tt){
+       List<Table234> empl = new ArrayList<>();
        Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select * from [table] where name like '%"+tt+"%'";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
            ResultSet rs = pr.executeQuery();
            while(rs.next()){
-               Table tk = new Table();
+               Table234 tk = new Table234();
                tk.setId(rs.getInt("id"));
                tk.setTang(rs.getString("area"));
                tk.setBan(rs.getString("state"));

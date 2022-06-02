@@ -8,16 +8,16 @@ package com.java.coffee_management.model;
  *
  * @author ASUS
  */
-public class Table {
+public class Table234 {
     int id;
-    String tang,ban;
+    String area,ban;
 
     public int getId() {
         return id;
     }
 
     public String getTang() {
-        return tang;
+        return area;
     }
 
     public String getBan() {
@@ -29,7 +29,7 @@ public class Table {
     }
 
     public void setTang(String tang) {
-        this.tang = tang;
+        this.area = tang;
     }
 
     public void setBan(String ban) {

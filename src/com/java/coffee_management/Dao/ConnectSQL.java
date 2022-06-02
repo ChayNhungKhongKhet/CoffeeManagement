@@ -6,7 +6,7 @@ package com.java.coffee_management.Dao;
 
 import java.sql.*;
 import java.util.*;
-
+//ket noi co so du lieu
 public class ConnectSQL {
     public static Connection Connect_JDBC(){
         final String Url = "jdbc:sqlserver://DESKTOP-MU64O7N\\SQLEXPRESS:1433;database=coffee_management";
