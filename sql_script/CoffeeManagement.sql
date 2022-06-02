@@ -129,7 +129,7 @@ create table receipt
 (
 id int identity primary key,
 supplier_id int,
-[date] date,
+[date] varchar(10),
 constraint FK_receipt_supplier_id 
 foreign key(supplier_id) 
 references supplier(id)
@@ -228,7 +228,7 @@ create table [order]
 id int identity primary key,
 employee_id int,
 table_id int,
-date_time date,
+date_time varchar(30),
 [state] nvarchar(25) default N'đã thanh toán',
 );
 go
@@ -261,8 +261,8 @@ go
 create table size
 (
 id int identity primary key,
-[name] varchar(2),
-extra_price float
+name varchar(2),
+extra_price decimal(5,3)
 );
 go
 
@@ -404,8 +404,6 @@ insert into [table](area)values
 (N'Tầng 3'),
 (N'Tầng 3')
 go
-set dateformat dmy
-go
 insert into [order](employee_id,table_id,date_time)values
 (1,11,'20/12/2021'),
 (2,2,'20/12/2021'),
@@ -446,7 +444,6 @@ insert into ingredient(ingredient_category,[name],degree)values
 (N'Nguyên liệu topping',N'Bột thạch dừa','kg'),
 (N'Phụ gia','vani','kg')
 go
-set dateformat dmy
 insert into receipt(supplier_id,[date])values
 (1,'04/02/2022'),--1
 (1,'04/02/2022'),--2
@@ -460,22 +457,22 @@ go
 
 
 insert into receipt_detail(receipt_id,ingredient_id,quanlity,price,employee_id)values
-(1,1,2,15000,5),
-(2,2,3,22000,1),
-(3,3,4,22000,5),
-(4,4,1,12000,1),
-(5,5,2,75000,5),
-(6,6,4,57000,5),
-(7,7,5,43000,1),
-(8,8,8,87000,5),
-(1,9,3,55000,5),
-(2,10,8,19000,5),
-(3,11,8,22000,1),
-(4,12,2,42000,5),
-(5,13,7,15000,1),
-(6,14,9,42000,5),
-(7,15,5,16000,1),
-(8,16,1,21000,5)
+(1,1,2,15.000,5),
+(2,2,3,22.000,1),
+(3,3,4,22.000,5),
+(4,4,1,12.000,1),
+(5,5,2,75.000,5),
+(6,6,4,57.000,5),
+(7,7,5,43.000,1),
+(8,8,8,87.000,5),
+(1,9,3,55.000,5),
+(2,10,8,19.000,5),
+(3,11,8,22.000,1),
+(4,12,2,42.000,5),
+(5,13,7,15.000,1),
+(6,14,9,42.000,5),
+(7,15,5,16.000,1),
+(8,16,1,21.000,5)
 go
 
 insert into recipe(product_id,ingredient_id,quanlity)values
@@ -489,5 +486,4 @@ insert into recipe(product_id,ingredient_id,quanlity)values
 (6,5,0.2),
 (7,7,0.2),
 (8,8,0.2)
-
 
