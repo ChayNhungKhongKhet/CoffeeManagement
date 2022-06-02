@@ -76,6 +76,11 @@ public class Discount extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(176, 61, 50));
         jButton2.setText("Hủy");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelDiscountTable318Layout = new javax.swing.GroupLayout(panelDiscountTable318);
         panelDiscountTable318.setLayout(panelDiscountTable318Layout);
@@ -153,10 +158,16 @@ public class Discount extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(Discount.this, "Thanh toán thanh công!", "Thành công", JOptionPane.PLAIN_MESSAGE);
-        new Order_().setVisible(true);
+        new Order().setVisible(true);
         this.dispose();
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        new Payment().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,7 +194,6 @@ public class Discount extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Discount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

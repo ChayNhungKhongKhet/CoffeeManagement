@@ -102,6 +102,11 @@ public class Quantity extends javax.swing.JFrame {
 
         btnCancel318.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnCancel318.setText("Hủy");
+        btnCancel318.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancel318ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelQuantity318Layout = new javax.swing.GroupLayout(panelQuantity318);
         panelQuantity318.setLayout(panelQuantity318Layout);
@@ -204,6 +209,12 @@ public class Quantity extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnAgree318ActionPerformed
 
+    private void btnCancel318ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancel318ActionPerformed
+        // TODO add your handling code here:
+        new Order().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCancel318ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -229,7 +240,6 @@ public class Quantity extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Quantity.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

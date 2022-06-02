@@ -193,6 +193,8 @@ public class Payment extends javax.swing.JFrame {
 
     private void btnCancel318ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancel318ActionPerformed
         // TODO add your handling code here:
+        new Menu().setVisible(true);
+        this.dispose();
         
     }//GEN-LAST:event_btnCancel318ActionPerformed
 
@@ -238,14 +240,13 @@ public class Payment extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Payment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run () {
                 new Payment().setVisible(true);
             }
-        });/**/    
+});/**/    
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
