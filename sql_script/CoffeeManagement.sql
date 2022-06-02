@@ -7,7 +7,7 @@ create table [role]
 (
 	id int identity primary key,
 	[name] nvarchar(20),
-	amount_per_hour decimal(5,3)
+	amount_per_hour float
 );
 go
 create table employee
@@ -75,13 +75,7 @@ create table inventory
 	
 )
 go
-alter table inventory
-add CONSTRAINT fk_material_code foreign key (material_code, id) references warehouse(material_code, id)
 
-drop table inventory
-
-
-go
 alter table purchase
 	add constraint FK_purchase_id foreign key(id) 
 			references employee(id)
@@ -156,7 +150,7 @@ create table receipt_detail
 receipt_id int,
 ingredient_id int,
 quanlity int,
-price decimal(5,3),
+price float,
 employee_id int,
 primary key(receipt_id,ingredient_id)
 );
@@ -197,7 +191,7 @@ create table product
 id int identity primary key,
 category_id int,
 [name] nvarchar(30),
-price decimal(5,3),
+price float,
 constraint FK_product_category_id 
 foreign key(category_id)
 references category(id)
@@ -262,7 +256,7 @@ create table size
 (
 id int identity primary key,
 name varchar(2),
-extra_price decimal(5,3)
+extra_price float
 );
 go
 
@@ -289,7 +283,8 @@ order_id int,
 product_id int,
 product_size_id int,
 quantity int,
-price decimal(5,3),
+price float,
+
 primary key(order_id,product_id)
 );
 go
@@ -305,11 +300,11 @@ go
 
 
 insert into [role]([name],amount_per_hour)values
-(N'Nhân viên bán hàng',40.000),
-(N'Nhân viên phục vụ',30.000),
-(N'Quản lý',60.000),
-(N'Quản lý kho',50.000),
-(N'Admin',99.000)
+(N'Nhân viên bán hàng',40000),
+(N'Nhân viên phục vụ',30000),
+(N'Quản lý',60000),
+(N'Quản lý kho',50000),
+(N'Admin',99000)
 go
 
 
@@ -341,9 +336,9 @@ go
 
 go
 insert into size([name],extra_price)
-	values ('M',0.000),
-		   ('L',5.000),
-		   ('XL',10.000);
+	values ('M',0000),
+		   ('L',5000),
+		   ('XL',10000);
 go
 insert into category([name])
 	values (N'Cà phê'),
@@ -352,14 +347,14 @@ insert into category([name])
 		   (N'Sinh tố, nước ép');
 go
 insert into product(category_id,[name],price)
-	values (1,N'Cà phê sữa',17.000),
-		   (1,N'Cà phê đen',15.000),
-		   (2,N'Trà sữa truyền thống',25.000),
-		   (2,N'Trà sữa trứng nướng',30.000),
-		   (3,N'Trà vải',30.000),
-		   (3,N'Trà táo',30.000),
-		   (4,N'Dưa hấu',30.000),
-		   (4,N'Thơm',30.000);
+	values (1,N'Cà phê sữa',17000),
+		   (1,N'Cà phê đen',15000),
+		   (2,N'Trà sữa truyền thống',25000),
+		   (2,N'Trà sữa trứng nướng',30000),
+		   (3,N'Trà vải',30000),
+		   (3,N'Trà táo',30000),
+		   (4,N'Dưa hấu',30000),
+		   (4,N'Thơm',30000);
 go 
 insert into product_size(product_id,size_id)
 	values(1,1),
@@ -415,14 +410,15 @@ insert into [order](employee_id,table_id,date_time)values
 
 go
 insert into order_detail(order_id,product_id,product_size_id,quantity,price)values
-(1,1,1,10,17.000),
-(2,3,3,3,35.000),
-(3,4,1,5,30.000),
-(5,5,1,2,30.000),
-(6,6,3,2,40.000),
-(7,7,1,3,30.000)
+(1,1,1,10,17000),
+(2,3,3,3,35000),
+(3,4,1,5,30000),
+(5,5,1,2,30000),
+(6,6,3,2,40000),
+(7,7,1,3,30000)
 
 go
+
 insert into supplier([name],phone,[address])values
 (N'Cửa hàng nguyên liệu pha chế trà sữa và cafe ông Tân','0132481234',N'Đà Nẵng')
 go
