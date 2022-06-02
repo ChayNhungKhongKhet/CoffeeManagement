@@ -75,6 +75,7 @@ create table inventory
 	
 )
 go
+
 alter table purchase
 	add constraint FK_purchase_id foreign key(id) 
 			references employee(id)
@@ -283,6 +284,7 @@ product_id int,
 product_size_id int,
 quantity int,
 price float,
+
 primary key(order_id,product_id)
 );
 go
@@ -416,6 +418,7 @@ insert into order_detail(order_id,product_id,product_size_id,quantity,price)valu
 (7,7,1,3,30000)
 
 go
+
 insert into supplier([name],phone,[address])values
 (N'Cửa hàng nguyên liệu pha chế trà sữa và cafe ông Tân','0132481234',N'Đà Nẵng')
 go
