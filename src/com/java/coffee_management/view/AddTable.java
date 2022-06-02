@@ -31,110 +31,110 @@ public class AddTable extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jPanelAddTable234 = new javax.swing.JPanel();
+        jPanelTabbarTable234 = new javax.swing.JPanel();
+        BtnXAddtable234 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        ComboBoxTableFloor234 = new javax.swing.JComboBox<>();
+        btnAddTable1_234 = new javax.swing.JLabel();
+        btnCancelTable1_234 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(69, 32, 16));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 3));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelAddTable234.setBackground(new java.awt.Color(69, 32, 16));
+        jPanelAddTable234.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 3));
+        jPanelAddTable234.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 2));
+        jPanelTabbarTable234.setBackground(new java.awt.Color(153, 153, 153));
+        jPanelTabbarTable234.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 2));
 
-        jLabel1.setBackground(new java.awt.Color(255, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("X");
-        jLabel1.setOpaque(true);
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        BtnXAddtable234.setBackground(new java.awt.Color(255, 0, 0));
+        BtnXAddtable234.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        BtnXAddtable234.setForeground(new java.awt.Color(255, 255, 255));
+        BtnXAddtable234.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BtnXAddtable234.setText("X");
+        BtnXAddtable234.setOpaque(true);
+        BtnXAddtable234.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                BtnXAddtable234MouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelTabbarTable234Layout = new javax.swing.GroupLayout(jPanelTabbarTable234);
+        jPanelTabbarTable234.setLayout(jPanelTabbarTable234Layout);
+        jPanelTabbarTable234Layout.setHorizontalGroup(
+            jPanelTabbarTable234Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTabbarTable234Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(BtnXAddtable234, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        jPanelTabbarTable234Layout.setVerticalGroup(
+            jPanelTabbarTable234Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(BtnXAddtable234, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 346, -1));
+        jPanelAddTable234.add(jPanelTabbarTable234, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 346, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 51));
         jLabel2.setText("THÊM BÀN ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 33, -1, -1));
+        jPanelAddTable234.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 33, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Bạn muốn đặt thêm bàn vào lầu:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 73, -1, -1));
+        jPanelAddTable234.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 73, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LẦU 1", "LẦU 2", "LẦU 3", " " }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 87, -1));
+        ComboBoxTableFloor234.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LẦU 1", "LẦU 2", "LẦU 3", " " }));
+        jPanelAddTable234.add(ComboBoxTableFloor234, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 87, -1));
 
-        jLabel5.setBackground(new java.awt.Color(0, 204, 255));
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("THÊM  ");
-        jLabel5.setOpaque(true);
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAddTable1_234.setBackground(new java.awt.Color(0, 204, 255));
+        btnAddTable1_234.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnAddTable1_234.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddTable1_234.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnAddTable1_234.setText("THÊM  ");
+        btnAddTable1_234.setOpaque(true);
+        btnAddTable1_234.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                btnAddTable1_234MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 175, 100, 23));
+        jPanelAddTable234.add(btnAddTable1_234, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 175, 100, 23));
 
-        jLabel6.setBackground(new java.awt.Color(255, 51, 51));
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("HUỶ BỎ ");
-        jLabel6.setOpaque(true);
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 176, 100, 23));
+        btnCancelTable1_234.setBackground(new java.awt.Color(255, 51, 51));
+        btnCancelTable1_234.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnCancelTable1_234.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancelTable1_234.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnCancelTable1_234.setText("HUỶ BỎ ");
+        btnCancelTable1_234.setOpaque(true);
+        jPanelAddTable234.add(btnCancelTable1_234, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 176, 100, 23));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelAddTable234, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+            .addComponent(jPanelAddTable234, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void BtnXAddtable234MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnXAddtable234MouseClicked
         this.setVisible(false);
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_BtnXAddtable234MouseClicked
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    private void btnAddTable1_234MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddTable1_234MouseClicked
         // TODO add your handling code here:
-        service.addTable(jComboBox1.getSelectedIndex()+1);
+        service.addTable(ComboBoxTableFloor234.getSelectedIndex()+1);
         this.dispose();
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_btnAddTable1_234MouseClicked
 
     /**
      * @param args the command line arguments
@@ -172,14 +172,14 @@ public class AddTable extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel BtnXAddtable234;
+    private javax.swing.JComboBox<String> ComboBoxTableFloor234;
+    private javax.swing.JLabel btnAddTable1_234;
+    private javax.swing.JLabel btnCancelTable1_234;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanelAddTable234;
+    private javax.swing.JPanel jPanelTabbarTable234;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

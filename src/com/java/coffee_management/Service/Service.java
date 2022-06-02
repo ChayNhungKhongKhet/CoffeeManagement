@@ -5,12 +5,12 @@
 package com.java.coffee_management.Service;
 
 import com.java.coffee_management.Dao.Dao;
-import com.java.coffee_management.entity.Employee_entity;
-import com.java.coffee_management.entity.Menu_entity;
-import com.java.coffee_management.entity.Table;
-import com.java.coffee_management.entity.category;
-import com.java.coffee_management.entity.employee_role;
-import com.java.coffee_management.entity.role;
+import com.java.coffee_management.model.Employee_entity;
+import com.java.coffee_management.model.Menu_entity;
+import com.java.coffee_management.model.Table;
+import com.java.coffee_management.model.category;
+import com.java.coffee_management.model.employee_role;
+import com.java.coffee_management.model.role;
 import java.util.List;
 
 /**

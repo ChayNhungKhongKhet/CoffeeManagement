@@ -5,10 +5,10 @@
 package com.java.coffee_management.view;
 import com.java.coffee_management.Service.Service;
 import com.java.coffee_management.Dao.Dao;
-import com.java.coffee_management.entity.Employee_entity;
-import com.java.coffee_management.entity.Table;
-import com.java.coffee_management.entity.Menu_entity;
-import com.java.coffee_management.entity.category;
+import com.java.coffee_management.model.Employee_entity;
+import com.java.coffee_management.model.Table;
+import com.java.coffee_management.model.Menu_entity;
+import com.java.coffee_management.model.category;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;

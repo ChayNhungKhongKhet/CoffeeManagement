@@ -5,12 +5,12 @@
 package com.java.coffee_management.Dao;
 
 
-import com.java.coffee_management.entity.Employee_entity;
-import com.java.coffee_management.entity.Table;
-import com.java.coffee_management.entity.employee_role;
-import com.java.coffee_management.entity.role;
-import com.java.coffee_management.entity.Menu_entity;
-import com.java.coffee_management.entity.category;
+import com.java.coffee_management.model.Employee_entity;
+import com.java.coffee_management.model.Table;
+import com.java.coffee_management.model.employee_role;
+import com.java.coffee_management.model.role;
+import com.java.coffee_management.model.Menu_entity;
+import com.java.coffee_management.model.category;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,7 +22,7 @@ import java.util.List;
 public class Dao {
    public List<Employee_entity> getAllEmployee_234(){
        List<Employee_entity> empl = new ArrayList<>();
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select employee.[name],start_job_date,employee.phone, [role].[name],employee.[user_name],employee.[password], employee.id  from  employee , employee_role, [role]  where employee.id = employee_role.employee_id and employee_role.role_id = [role].id";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -45,7 +45,7 @@ public class Dao {
    }
    public List<Employee_entity> searchEmployee_234(String name){
        List<Employee_entity> empl = new ArrayList<>();
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select employee.[name],start_job_date,employee.phone, [role].[name],employee.[user_name],employee.[password], employee.id  from  employee , employee_role, [role]  where employee.id = employee_role.employee_id and employee_role.role_id = [role].id and employee.[name] like N'%"+name+"%'";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -68,7 +68,7 @@ public class Dao {
    }
    public List<Employee_entity> searchCVEmployee_234(String name){
        List<Employee_entity> empl = new ArrayList<>();
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select employee.[name],start_job_date,employee.phone, [role].[name],employee.[user_name],employee.[password], employee.id  from  employee , employee_role, [role]  where employee.id = employee_role.employee_id and employee_role.role_id = [role].id and [role].[name] like N'%"+name+"%'";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -91,7 +91,7 @@ public class Dao {
    }
     public List<Table> getAllTable_234(){
        List<Table> empl = new ArrayList<>();
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select * from [table]";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -110,7 +110,7 @@ public class Dao {
    }
     public List<Table> getAllTable_234(int tt){
        List<Table> empl = new ArrayList<>();
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select * from [table] where area like '%"+tt+"%'";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -129,7 +129,7 @@ public class Dao {
    }
     public List<Table> getAllTableById_234(int  tt){
        List<Table> empl = new ArrayList<>();
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select * from [table] where name like '%"+tt+"%'";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -148,7 +148,7 @@ public class Dao {
    }
    public List<role> getAllRole_234(){
        List<role> empl = new ArrayList<>();
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select * from role";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -165,7 +165,7 @@ public class Dao {
        return empl;
    }
    public int getIdEmployeeMax(){
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select * from employee";
        int i=0;
        try{
@@ -180,7 +180,7 @@ public class Dao {
        return i;
    }
    public int getRoleByName(String name){
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select id from role where name = '"+name+"'";
        int i = 0;
        try{
@@ -195,7 +195,7 @@ public class Dao {
        return i;
    }
    public void addEmployee_234(Employee_entity e1,employee_role e2,String name){
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "insert into employee([name],[user_name],[phone],[password]) values(N'"+e1.getTennv()+"','"+e1.getUserName()+"','"+e1.getSoDienThoai()+"','"+e1.getPassword()+"')";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -220,7 +220,7 @@ public class Dao {
        }
    }
    public void UpdateEmployee_234(String id,String ht,String sdt){
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "update employee set name = N'"+ht+"',phone = '"+sdt+"' where id= "+id;
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -230,7 +230,7 @@ public class Dao {
        }
    }
    public int demNV(){
-     Connection connect = ConnectionDB.Connect_JDBC();
+     Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select * from employee";
        int i=0;
        try{
@@ -246,7 +246,7 @@ public class Dao {
        return i;
    }
    public void addTable(int i){
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "insert into [Table](area,state) values(N'Tầng "+i+"',N'trống')";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -256,7 +256,7 @@ public class Dao {
        }  
    }
    public void updateTable(int id,int tang){
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "update [Table] set area = N'Tầng "+tang+"' where id = "+id;
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -266,7 +266,7 @@ public class Dao {
        }  
    }
    public int demBan(){
-     Connection connect = ConnectionDB.Connect_JDBC();
+     Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select * from [Table]";
        int i=0;
        try{
@@ -282,7 +282,7 @@ public class Dao {
        return i;
    }
    public int demMenu(){
-     Connection connect = ConnectionDB.Connect_JDBC();
+     Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select * from [product]";
        int i=0;
        try{
@@ -298,7 +298,7 @@ public class Dao {
        return i;
    }
     public void deleteTable(int i){
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "delete [table] where id ="+i;
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -309,7 +309,7 @@ public class Dao {
    }
    public List<Menu_entity> getAllMenu_234(){
        List<Menu_entity> empl = new ArrayList<>();
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select product.id,category_id,category.name,product.name,price from product,category where product.category_id=category.id";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -330,7 +330,7 @@ public class Dao {
    }
    public List<Menu_entity> getAllMenu1_234(String name){
        List<Menu_entity> empl = new ArrayList<>();
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select product.id,category_id,category.[name],product.[name],price from product,category where product.category_id=category.id and category.[name] = N'"+name+"'";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -351,7 +351,7 @@ public class Dao {
    }
    public List<Menu_entity> getAllMenu_234(String name){
        List<Menu_entity> empl = new ArrayList<>();
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select product.id,category_id,category.[name],product.[name],price from product,category where product.category_id=category.id and product.[name] like N'%"+name+"%'";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -372,7 +372,7 @@ public class Dao {
    }
    public List<category> getAllCategory_234(){
        List<category> empl = new ArrayList<>();
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select * from category";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -389,7 +389,7 @@ public class Dao {
        return empl;
    }
    public int getIdCategoryByName(String name){
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select * from category where [name] = N'"+name+"'" ;
        int i = 0;
        System.out.println(name+" ");
@@ -406,7 +406,7 @@ public class Dao {
        return i;
    }
    public void addMenu(String nameC,String name,float gia){
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "insert into product(category_id,[name],price) values(?,?,?)";
        int idC= getIdCategoryByName(nameC);
        System.out.println("\n"+idC);
@@ -421,7 +421,7 @@ public class Dao {
        }
    }
    public void updateMenu(int idP,String nameC,String name,float gia){
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "update product set category_id= ?,name = ?, price = ? where id= ?";
        int idC= getIdCategoryByName(nameC);
        try{
@@ -436,7 +436,7 @@ public class Dao {
        }
    }
    public void deleteMenu(int id){
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "delete product where id = "+id;
        try{
            PreparedStatement pr = connect.prepareStatement(sql);
@@ -446,7 +446,7 @@ public class Dao {
        }
    }
    public int login_234(String userName, String pass){
-       Connection connect = ConnectionDB.Connect_JDBC();
+       Connection connect = ConnectSQL.Connect_JDBC();
        String sql = "select * from employee where [user_name]= '"+userName+"' and [password]= '"+pass+"'";
        try{
            PreparedStatement pr = connect.prepareStatement(sql);

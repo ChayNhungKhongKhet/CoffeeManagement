@@ -2,38 +2,30 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.java.coffee_management.entity;
+package com.java.coffee_management.model;
 
 /**
  *
  * @author ASUS
  */
-public class Table {
+public class category {
     int id;
-    String tang,ban;
+    String name;
 
     public int getId() {
         return id;
     }
 
-    public String getTang() {
-        return tang;
-    }
-
-    public String getBan() {
-        return ban;
+    public String getName() {
+        return name;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setTang(String tang) {
-        this.tang = tang;
-    }
-
-    public void setBan(String ban) {
-        this.ban = ban;
+    public void setName(String name) {
+        this.name = name;
     }
     
 }

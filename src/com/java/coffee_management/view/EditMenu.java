@@ -5,8 +5,8 @@
 package com.java.coffee_management.view;
 
 import com.java.coffee_management.Service.Service;
-import com.java.coffee_management.entity.Menu_entity;
-import com.java.coffee_management.entity.category;
+import com.java.coffee_management.model.Menu_entity;
+import com.java.coffee_management.model.category;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,17 +23,17 @@ public class EditMenu extends javax.swing.JFrame {
     public EditMenu() {
         initComponents();
         setLocationRelativeTo(null);
-        jComboBox1.removeAllItems();
-        jComboBox2.removeAllItems();
+        jcomboboxtypemenu234.removeAllItems();
+        jComboBoxIDMenu234.removeAllItems();
         List<category> cts = new ArrayList<>();
         cts = service.getAllCategory_234();
         for (category c:cts){
-            jComboBox1.addItem(c.getName());
+            jcomboboxtypemenu234.addItem(c.getName());
         }
         List<Menu_entity> mns = service.getAllMenu_234();
         
         for(Menu_entity e : mns){
-            jComboBox2.addItem(String.valueOf(e.getIdP()));
+            jComboBoxIDMenu234.addItem(String.valueOf(e.getIdP()));
         }
     }
 
@@ -46,41 +46,41 @@ public class EditMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanelEditMenu234 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        btnXEditmenu234 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        jcomboboxtypemenu234 = new javax.swing.JComboBox<>();
+        btnEditmenu1_234 = new javax.swing.JLabel();
+        btnCancel1_234 = new javax.swing.JLabel();
+        jtfnamemenu234 = new javax.swing.JTextField();
+        jtfPricemenu234 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBoxIDMenu234 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(69, 32, 16));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 3));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelEditMenu234.setBackground(new java.awt.Color(69, 32, 16));
+        jPanelEditMenu234.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 3));
+        jPanelEditMenu234.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 2));
 
-        jLabel1.setBackground(new java.awt.Color(255, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("X");
-        jLabel1.setOpaque(true);
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnXEditmenu234.setBackground(new java.awt.Color(255, 0, 0));
+        btnXEditmenu234.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnXEditmenu234.setForeground(new java.awt.Color(255, 255, 255));
+        btnXEditmenu234.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnXEditmenu234.setText("X");
+        btnXEditmenu234.setOpaque(true);
+        btnXEditmenu234.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                btnXEditmenu234MouseClicked(evt);
             }
         });
 
@@ -90,121 +90,121 @@ public class EditMenu extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnXEditmenu234, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnXEditmenu234, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 346, -1));
+        jPanelEditMenu234.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 346, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 51));
         jLabel2.setText("SỬA MÓN  ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 33, -1, -1));
+        jPanelEditMenu234.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 33, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("ID món");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+        jPanelEditMenu234.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CÀ PHÊ", "TRÀ ", "TRÀ SỮA ", "SINH TỐ, NƯỚC ÉP", " ", " " }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 140, -1));
+        jcomboboxtypemenu234.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CÀ PHÊ", "TRÀ ", "TRÀ SỮA ", "SINH TỐ, NƯỚC ÉP", " ", " " }));
+        jPanelEditMenu234.add(jcomboboxtypemenu234, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 140, -1));
 
-        jLabel5.setBackground(new java.awt.Color(0, 204, 255));
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("SỬA");
-        jLabel5.setOpaque(true);
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnEditmenu1_234.setBackground(new java.awt.Color(0, 204, 255));
+        btnEditmenu1_234.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnEditmenu1_234.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditmenu1_234.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnEditmenu1_234.setText("SỬA");
+        btnEditmenu1_234.setOpaque(true);
+        btnEditmenu1_234.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                btnEditmenu1_234MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 100, 23));
+        jPanelEditMenu234.add(btnEditmenu1_234, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 100, 23));
 
-        jLabel6.setBackground(new java.awt.Color(255, 51, 51));
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("HUỶ BỎ ");
-        jLabel6.setOpaque(true);
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 100, 23));
+        btnCancel1_234.setBackground(new java.awt.Color(255, 51, 51));
+        btnCancel1_234.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnCancel1_234.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancel1_234.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnCancel1_234.setText("HUỶ BỎ ");
+        btnCancel1_234.setOpaque(true);
+        jPanelEditMenu234.add(btnCancel1_234, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 100, 23));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jtfnamemenu234.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jtfnamemenu234ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 166, -1));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 166, -1));
+        jPanelEditMenu234.add(jtfnamemenu234, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 166, -1));
+        jPanelEditMenu234.add(jtfPricemenu234, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 166, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 0));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText(" Loại món:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 67, -1));
+        jPanelEditMenu234.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 67, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 0));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("Giá món:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 67, -1));
+        jPanelEditMenu234.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 67, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxIDMenu234.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxIDMenu234.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                jComboBoxIDMenu234ActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 160, -1));
+        jPanelEditMenu234.add(jComboBoxIDMenu234, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 160, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 0));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Tên món:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+        jPanelEditMenu234.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 0));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Tên món:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+        jPanelEditMenu234.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanelEditMenu234, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
+            .addComponent(jPanelEditMenu234, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void btnXEditmenu234MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXEditmenu234MouseClicked
         this.setVisible(false);
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_btnXEditmenu234MouseClicked
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void jComboBoxIDMenu234ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxIDMenu234ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_jComboBoxIDMenu234ActionPerformed
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    private void btnEditmenu1_234MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditmenu1_234MouseClicked
         // TODO add your handling code here:
-        service.updateMenu(Integer.valueOf(String.valueOf(jComboBox2.getSelectedItem())),String.valueOf(jComboBox1.getSelectedItem()), jTextField2.getText(), Float.valueOf(jTextField3.getText()));
+        service.updateMenu(Integer.valueOf(String.valueOf(jComboBoxIDMenu234.getSelectedItem())),String.valueOf(jcomboboxtypemenu234.getSelectedItem()), jtfnamemenu234.getText(), Float.valueOf(jtfPricemenu234.getText()));
         this.dispose();
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_btnEditmenu1_234MouseClicked
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jtfnamemenu234ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfnamemenu234ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_jtfnamemenu234ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,20 +242,20 @@ public class EditMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel btnCancel1_234;
+    private javax.swing.JLabel btnEditmenu1_234;
+    private javax.swing.JLabel btnXEditmenu234;
+    private javax.swing.JComboBox<String> jComboBoxIDMenu234;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JPanel jPanelEditMenu234;
+    private javax.swing.JComboBox<String> jcomboboxtypemenu234;
+    private javax.swing.JTextField jtfPricemenu234;
+    private javax.swing.JTextField jtfnamemenu234;
     // End of variables declaration//GEN-END:variables
 }

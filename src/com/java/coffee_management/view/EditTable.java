@@ -5,7 +5,7 @@
 package com.java.coffee_management.view;
 
 import com.java.coffee_management.Service.Service;
-import com.java.coffee_management.entity.category;
+import com.java.coffee_management.model.category;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,36 +35,36 @@ public class EditTable extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanelEdittable234 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        btnXEdittable234 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jTextFieldIDtable_234 = new javax.swing.JTextField();
+        jComboBoxFloor234 = new javax.swing.JComboBox<>();
+        btnEditTale234 = new javax.swing.JLabel();
+        btnCancelTale234 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(69, 32, 16));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 3));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelEdittable234.setBackground(new java.awt.Color(69, 32, 16));
+        jPanelEdittable234.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 3));
+        jPanelEdittable234.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 2));
 
-        jLabel1.setBackground(new java.awt.Color(255, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("X");
-        jLabel1.setOpaque(true);
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnXEdittable234.setBackground(new java.awt.Color(255, 0, 0));
+        btnXEdittable234.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnXEdittable234.setForeground(new java.awt.Color(255, 255, 255));
+        btnXEdittable234.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnXEdittable234.setText("X");
+        btnXEdittable234.setOpaque(true);
+        btnXEdittable234.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                btnXEdittable234MouseClicked(evt);
             }
         });
 
@@ -74,90 +74,90 @@ public class EditTable extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnXEdittable234, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnXEdittable234, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 346, -1));
+        jPanelEdittable234.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 346, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 51));
         jLabel2.setText("SỬA BÀN ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 33, -1, -1));
+        jPanelEdittable234.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 33, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("ID BÀN:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 73, -1, -1));
+        jPanelEdittable234.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 73, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 0));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("LẦU:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 125, 67, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 71, 166, -1));
+        jPanelEdittable234.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 125, 67, -1));
+        jPanelEdittable234.add(jTextFieldIDtable_234, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 71, 166, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LẦU 1", "LẦU 2", "LẦU 3", " " }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 123, 87, -1));
+        jComboBoxFloor234.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LẦU 1", "LẦU 2", "LẦU 3", " " }));
+        jPanelEdittable234.add(jComboBoxFloor234, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 123, 87, -1));
 
-        jLabel5.setBackground(new java.awt.Color(0, 204, 255));
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("SỬA");
-        jLabel5.setOpaque(true);
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnEditTale234.setBackground(new java.awt.Color(0, 204, 255));
+        btnEditTale234.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnEditTale234.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditTale234.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnEditTale234.setText("SỬA");
+        btnEditTale234.setOpaque(true);
+        btnEditTale234.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                btnEditTale234MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 175, 100, 23));
+        jPanelEdittable234.add(btnEditTale234, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 175, 100, 23));
 
-        jLabel6.setBackground(new java.awt.Color(255, 51, 51));
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("HUỶ BỎ ");
-        jLabel6.setOpaque(true);
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCancelTale234.setBackground(new java.awt.Color(255, 51, 51));
+        btnCancelTale234.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnCancelTale234.setForeground(new java.awt.Color(255, 255, 255));
+        btnCancelTale234.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnCancelTale234.setText("HUỶ BỎ ");
+        btnCancelTale234.setOpaque(true);
+        btnCancelTale234.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                btnCancelTale234MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 176, 100, 23));
+        jPanelEdittable234.add(btnCancelTale234, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 176, 100, 23));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelEdittable234, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
+            .addComponent(jPanelEdittable234, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void btnXEdittable234MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXEdittable234MouseClicked
         this.setVisible(false);
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_btnXEdittable234MouseClicked
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+    private void btnCancelTale234MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelTale234MouseClicked
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_btnCancelTale234MouseClicked
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    private void btnEditTale234MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditTale234MouseClicked
         // TODO add your handling code here:
-        service.updateTable(Integer.valueOf(jTextField1.getText()),Integer.valueOf(jComboBox1.getSelectedIndex()+1));
+        service.updateTable(Integer.valueOf(jTextFieldIDtable_234.getText()),Integer.valueOf(jComboBoxFloor234.getSelectedIndex()+1));
         this.dispose();
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_btnEditTale234MouseClicked
 
     /**
      * @param args the command line arguments
@@ -195,15 +195,15 @@ public class EditTable extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel btnCancelTale234;
+    private javax.swing.JLabel btnEditTale234;
+    private javax.swing.JLabel btnXEdittable234;
+    private javax.swing.JComboBox<String> jComboBoxFloor234;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel jPanelEdittable234;
+    private javax.swing.JTextField jTextFieldIDtable_234;
     // End of variables declaration//GEN-END:variables
 }

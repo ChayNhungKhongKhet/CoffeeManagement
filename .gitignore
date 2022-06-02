@@ -1,3 +1,5 @@
 /dist/
 /build/
 /nbproject/private/
+/sql_script/
+/src/com/java/coffee_management/dao/ConnectSQl.java
