@@ -23,7 +23,7 @@ public class SQLHandler {
     }
     
     public ResultSet getAllDataTKHoaDonDate338(String datefrom, String dateto) {
-        String query = "select id,date_time, table_id, quantity * price from [order], order_detail where [order].id = order_detail.order_id and date_time >= '"+datefrom+"' and date_time <= '"+dateto+"' " ;
+        String query = "select id,date_time, table_id, quantity * price from [order], order_detail where [order].id = order_detail.order_id and DATEDIFF(day, '"+datefrom+"',date_time) >=0 and DATEDIFF(day, date_time, '"+dateto+"') >=0" ;
         return conn.getData338(query);
     }
     
