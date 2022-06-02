@@ -540,7 +540,7 @@
                                           <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jPanel5_338" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="86" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -556,7 +556,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="jPanel5" max="32767" attributes="0"/>
+                                          <Component id="jPanel5_338" max="32767" attributes="0"/>
                                           <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                                           <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
@@ -572,7 +572,7 @@
                                 </DimensionLayout>
                               </Layout>
                               <SubComponents>
-                                <Container class="javax.swing.JPanel" name="jPanel5">
+                                <Container class="javax.swing.JPanel" name="jPanel5_338">
                                   <Properties>
                                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="10" green="20" red="45" type="rgb"/>
@@ -590,7 +590,7 @@
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Component id="jScrollPane20" min="-2" pref="973" max="-2" attributes="0"/>
                                                           <Group type="102" alignment="1" attributes="0">
-                                                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="jLabel3_338" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                                               <Component id="lbCollectedMoney338" min="-2" pref="150" max="-2" attributes="0"/>
                                                           </Group>
@@ -599,9 +599,9 @@
                                                       <Component id="btnXuatExcel338" min="-2" pref="133" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jLabel15" min="-2" pref="139" max="-2" attributes="0"/>
+                                                      <Component id="jLabel15_338" min="-2" pref="139" max="-2" attributes="0"/>
                                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel7_338" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <EmptySpace max="32767" attributes="0"/>
@@ -620,15 +620,15 @@
                                               </Group>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel3_338" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="lbCollectedMoney338" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel15" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                                                  <Component id="jLabel15_338" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel7_338" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <EmptySpace pref="70" max="32767" attributes="0"/>
@@ -653,11 +653,11 @@
                                                           <EmptySpace min="-2" pref="352" max="-2" attributes="0"/>
                                                           <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                                                           <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="jDateChooser3" min="-2" pref="135" max="-2" attributes="0"/>
+                                                          <Component id="jDateChooser3_338" min="-2" pref="135" max="-2" attributes="0"/>
                                                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                                           <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                          <Component id="jDateChooser4" min="-2" pref="139" max="-2" attributes="0"/>
+                                                          <Component id="jDateChooser4_338" min="-2" pref="139" max="-2" attributes="0"/>
                                                       </Group>
                                                       <Group type="102" alignment="0" attributes="0">
                                                           <EmptySpace max="-2" attributes="0"/>
@@ -683,8 +683,8 @@
                                                                   <Component id="jLabel13" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
                                                                   <Component id="jLabel14" alignment="1" min="-2" pref="21" max="-2" attributes="0"/>
                                                               </Group>
-                                                              <Component id="jDateChooser3" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jDateChooser4" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="jDateChooser3_338" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="jDateChooser4_338" min="-2" max="-2" attributes="0"/>
                                                           </Group>
                                                           <EmptySpace max="-2" attributes="0"/>
                                                           <Component id="jLabel12" min="-2" pref="37" max="-2" attributes="0"/>
@@ -759,9 +759,9 @@
                                             <Property name="text" type="java.lang.String" value="T&#x1eeb; ng&#xe0;y"/>
                                           </Properties>
                                         </Component>
-                                        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser3">
+                                        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser3_338">
                                         </Component>
-                                        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser4">
+                                        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser4_338">
                                         </Component>
                                       </SubComponents>
                                     </Container>
@@ -800,7 +800,7 @@
                                         </Component>
                                       </SubComponents>
                                     </Container>
-                                    <Component class="javax.swing.JLabel" name="jLabel3">
+                                    <Component class="javax.swing.JLabel" name="jLabel3_338">
                                       <Properties>
                                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -837,7 +837,7 @@
                                         <Property name="opaque" type="boolean" value="true"/>
                                       </Properties>
                                     </Component>
-                                    <Component class="javax.swing.JLabel" name="jLabel15">
+                                    <Component class="javax.swing.JLabel" name="jLabel15_338">
                                       <Properties>
                                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                           <Color blue="10" green="20" red="45" type="rgb"/>
@@ -850,7 +850,7 @@
                                         </Property>
                                       </Properties>
                                     </Component>
-                                    <Component class="javax.swing.JLabel" name="jLabel7">
+                                    <Component class="javax.swing.JLabel" name="jLabel7_338">
                                       <Properties>
                                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                           <Color blue="10" green="20" red="45" type="rgb"/>
@@ -1439,11 +1439,11 @@
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="jLabel26" min="-2" pref="56" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jDateChooser2" min="-2" pref="140" max="-2" attributes="0"/>
+                                              <Component id="jDateChooser2WH338" min="-2" pref="140" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                                               <Component id="jLabel27" min="-2" pref="65" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jDateChooser1" min="-2" pref="136" max="-2" attributes="0"/>
+                                              <Component id="jDateChooser1WH338" min="-2" pref="136" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                               <Component id="btnWareH338" min="-2" pref="100" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -1471,12 +1471,12 @@
                                           </Group>
                                           <Component id="jLabel25" alignment="1" min="-2" pref="83" max="-2" attributes="0"/>
                                           <Component id="jLabel26" alignment="1" min="-2" pref="24" max="-2" attributes="0"/>
-                                          <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jDateChooser2WH338" min="-2" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="btnWareH338" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                                               <Component id="btnExcelWare338" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="jDateChooser1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jDateChooser1WH338" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel27" min="-2" pref="21" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
@@ -1611,9 +1611,9 @@
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcelWare338ActionPerformed"/>
                               </Events>
                             </Component>
-                            <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+                            <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1WH338">
                             </Component>
-                            <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2">
+                            <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2WH338">
                             </Component>
                           </SubComponents>
                         </Container>
@@ -1862,7 +1862,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="PanelNorth340" max="32767" attributes="0"/>
+                                          <Component id="PanelNorthSale338" max="32767" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
@@ -1879,7 +1879,7 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="PanelNorth340" min="-2" max="-2" attributes="0"/>
+                                  <Component id="PanelNorthSale338" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <EmptySpace pref="64" max="32767" attributes="0"/>
@@ -1898,7 +1898,7 @@
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JPanel" name="PanelNorth340">
+                        <Container class="javax.swing.JPanel" name="PanelNorthSale338">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="10" green="20" red="45" type="rgb"/>
@@ -1916,11 +1916,11 @@
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="PanelTKHD" min="-2" max="-2" attributes="0"/>
+                                              <Component id="PanelTKHD338" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="PanelTNV" min="-2" max="-2" attributes="0"/>
+                                              <Component id="PanelTNV338" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="PanelTKHD2" min="-2" max="-2" attributes="0"/>
+                                              <Component id="PanelTKHD2338" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -1934,11 +1934,11 @@
                                       <Component id="jLabel32" min="-2" pref="41" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="PanelTKHD2" pref="220" max="32767" attributes="0"/>
+                                          <Component id="PanelTKHD2338" pref="220" max="32767" attributes="0"/>
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="PanelTKHD" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="PanelTNV" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="PanelTKHD338" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="PanelTNV338" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
@@ -1974,7 +1974,7 @@
                                 <Property name="opaque" type="boolean" value="true"/>
                               </Properties>
                             </Component>
-                            <Container class="javax.swing.JPanel" name="PanelTKHD">
+                            <Container class="javax.swing.JPanel" name="PanelTKHD338">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -2039,7 +2039,7 @@
                                 </Component>
                               </SubComponents>
                             </Container>
-                            <Container class="javax.swing.JPanel" name="PanelTNV">
+                            <Container class="javax.swing.JPanel" name="PanelTNV338">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="99" green="ff" red="99" type="rgb"/>
@@ -2104,7 +2104,7 @@
                                 </Component>
                               </SubComponents>
                             </Container>
-                            <Container class="javax.swing.JPanel" name="PanelTKHD2">
+                            <Container class="javax.swing.JPanel" name="PanelTKHD2338">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="66" type="rgb"/>

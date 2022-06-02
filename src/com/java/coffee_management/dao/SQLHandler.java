@@ -59,7 +59,7 @@ public class SQLHandler {
     
     
     public ResultSet getDataDate338(String datefrom, String dateto) {
-        String query = "select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price  from supplier,receipt , receipt_detail where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id and [date] >= '"+datefrom+"'  and [date] <= '"+dateto+"' ";
+        String query = "select receipt_id,supplier_id,[name],[date] ,ingredient_id,quanlity,price, quanlity * price  from supplier,receipt , receipt_detail where supplier.id = receipt.supplier_id and receipt.id = receipt_detail.receipt_id and DATEDIFF(day, '"+datefrom+"',[date]) >=0 and DATEDIFF(day, [date], '"+dateto+"') >=0";
         return conn.getData338(query);
     }
 }
