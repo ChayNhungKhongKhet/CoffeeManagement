@@ -6,9 +6,9 @@ package com.java.coffee_management.view;
 
 import com.java.coffee_management.Service.Service;
 import com.java.coffee_management.Dao.Dao;
-import com.java.coffee_management.entity.Employee_entity;
-import com.java.coffee_management.entity.employee_role;
-import com.java.coffee_management.entity.role;
+import com.java.coffee_management.model.Employee_entity;
+import com.java.coffee_management.model.employee_role;
+import com.java.coffee_management.model.role;
 import java.util.ArrayList;
 import java.util.List;
 

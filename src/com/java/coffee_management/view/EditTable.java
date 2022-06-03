@@ -5,7 +5,7 @@
 package com.java.coffee_management.view;
 
 import com.java.coffee_management.Service.Service;
-import com.java.coffee_management.entity.category;
+import com.java.coffee_management.model.category234;
 import java.util.ArrayList;
 import java.util.List;
 

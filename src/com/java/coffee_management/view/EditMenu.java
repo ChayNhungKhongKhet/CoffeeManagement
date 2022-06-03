@@ -5,8 +5,8 @@
 package com.java.coffee_management.view;
 
 import com.java.coffee_management.Service.Service;
-import com.java.coffee_management.entity.Menu_entity;
-import com.java.coffee_management.entity.category;
+import com.java.coffee_management.model.Menu_entity;
+import com.java.coffee_management.model.category234;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,9 +25,9 @@ public class EditMenu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         jComboBox1.removeAllItems();
         jComboBox2.removeAllItems();
-        List<category> cts = new ArrayList<>();
+        List<category234> cts = new ArrayList<>();
         cts = service.getAllCategory_234();
-        for (category c:cts){
+        for (category234 c:cts){
             jComboBox1.addItem(c.getName());
         }
         List<Menu_entity> mns = service.getAllMenu_234();

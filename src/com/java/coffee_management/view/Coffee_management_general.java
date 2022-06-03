@@ -5,10 +5,10 @@
 package com.java.coffee_management.view;
 import com.java.coffee_management.Service.Service;
 import com.java.coffee_management.Dao.Dao;
-import com.java.coffee_management.entity.Employee_entity;
-import com.java.coffee_management.entity.Table;
-import com.java.coffee_management.entity.Menu_entity;
-import com.java.coffee_management.entity.category;
+import com.java.coffee_management.model.Employee_entity;
+import com.java.coffee_management.model.Table234;
+import com.java.coffee_management.model.Menu_entity;
+import com.java.coffee_management.model.category234;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,9 +35,9 @@ public class Coffee_management_general extends javax.swing.JFrame {
         textFieldTotalTable234.setText(String.valueOf(service.demBan()));
         textFieldTotalDrink234.setText(String.valueOf(service.demMenu()));
         comboBoxTypeDrink234.removeAllItems();
-        List<category> cts = new ArrayList<>();
+        List<category234> cts = new ArrayList<>();
         cts = service.getAllCategory_234();
-        for (category c:cts){
+        for (category234 c:cts){
             comboBoxTypeDrink234.addItem(c.getName());
         }
         setLocationRelativeTo(null);
@@ -76,9 +76,9 @@ public class Coffee_management_general extends javax.swing.JFrame {
         defaultTableModelTB.addColumn("id");
         defaultTableModelTB.addColumn("Tầng");
         defaultTableModelTB.addColumn("Trạng thái");
-        List<Table> tbs = service.getAllTable_234();
+        List<Table234> tbs = service.getAllTable_234();
         
-        for(Table e : tbs){
+        for(Table234 e : tbs){
             defaultTableModelTB.addRow(new Object[]{e.getId(),e.getTang(),e.getBan(),});
         }
         defaultTableModelMN = new DefaultTableModel() {
@@ -108,9 +108,9 @@ public class Coffee_management_general extends javax.swing.JFrame {
         textFieldTotalTable234.setText(String.valueOf(service.demBan()));
         textFieldTotalDrink234.setText(String.valueOf(service.demMenu()));
         comboBoxTypeDrink234.removeAllItems();
-        List<category> cts = new ArrayList<>();
+        List<category234> cts = new ArrayList<>();
         cts = service.getAllCategory_234();
-        for (category c:cts){
+        for (category234 c:cts){
             comboBoxTypeDrink234.addItem(c.getName());
         }
         setLocationRelativeTo(null);
@@ -149,9 +149,9 @@ public class Coffee_management_general extends javax.swing.JFrame {
         defaultTableModelTB.addColumn("id");
         defaultTableModelTB.addColumn("Tầng");
         defaultTableModelTB.addColumn("Trạng thái");
-        List<Table> tbs = service.getAllTable_234();
+        List<Table234> tbs = service.getAllTable_234();
         
-        for(Table e : tbs){
+        for(Table234 e : tbs){
             defaultTableModelTB.addRow(new Object[]{e.getId(),e.getTang(),e.getBan(),});
         }
         defaultTableModelMN = new DefaultTableModel() {
@@ -996,9 +996,9 @@ public class Coffee_management_general extends javax.swing.JFrame {
             int id = Integer.valueOf(String.valueOf(tableTableManeger234.getValueAt(row,0)));
             service.deleteTable(id);
             defaultTableModelTB.setRowCount(0);
-            List<Table> tbs = service.getAllTable_234();
+            List<Table234> tbs = service.getAllTable_234();
 
-            for(Table e : tbs){
+            for(Table234 e : tbs){
                 defaultTableModelTB.addRow(new Object[]{e.getId(),e.getTang(),e.getBan(),});
             }
         }
@@ -1055,9 +1055,9 @@ public class Coffee_management_general extends javax.swing.JFrame {
     private void comboBoxFloor234ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxFloor234ItemStateChanged
         // TODO add your handling code here:
         defaultTableModelTB.setRowCount(0);
-        List<Table> tbs = service.getAllTable_234(comboBoxFloor234.getSelectedIndex()+1);
+        List<Table234> tbs = service.getAllTable_234(comboBoxFloor234.getSelectedIndex()+1);
         
-        for(Table e : tbs){
+        for(Table234 e : tbs){
             defaultTableModelTB.addRow(new Object[]{e.getId(),e.getTang(),e.getBan(),});
         }
     }//GEN-LAST:event_comboBoxFloor234ItemStateChanged
@@ -1065,9 +1065,9 @@ public class Coffee_management_general extends javax.swing.JFrame {
     private void btnRefresh1_234ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefresh1_234ActionPerformed
         // TODO add your handling code here:
         defaultTableModelTB.setRowCount(0);
-        List<Table> tbs = service.getAllTable_234();
+        List<Table234> tbs = service.getAllTable_234();
         
-        for(Table e : tbs){
+        for(Table234 e : tbs){
             defaultTableModelTB.addRow(new Object[]{e.getId(),e.getTang(),e.getBan(),});
         }
     }//GEN-LAST:event_btnRefresh1_234ActionPerformed

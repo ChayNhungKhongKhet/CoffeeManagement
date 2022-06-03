@@ -1,5 +1,5 @@
 ﻿create database coffee_management
---drop database coffee_management
+drop database coffee_management
 go
 use coffee_management
 go
@@ -7,7 +7,7 @@ create table [role]
 (
 	id int identity primary key,
 	[name] nvarchar(20),
-	amount_per_hour decimal(5,3)
+	amount_per_hour float
 );
 go
 create table employee
@@ -75,13 +75,6 @@ create table inventory
 	
 )
 go
-alter table inventory
-add CONSTRAINT fk_material_code foreign key (material_code, id) references warehouse(material_code, id)
-
-drop table inventory
-
-
-go
 alter table purchase
 	add constraint FK_purchase_id foreign key(id) 
 			references employee(id)
@@ -129,7 +122,7 @@ create table receipt
 (
 id int identity primary key,
 supplier_id int,
-[date] varchar(10),
+[date] date,
 constraint FK_receipt_supplier_id 
 foreign key(supplier_id) 
 references supplier(id)
@@ -156,7 +149,7 @@ create table receipt_detail
 receipt_id int,
 ingredient_id int,
 quanlity int,
-price decimal(5,3),
+price float,
 employee_id int,
 primary key(receipt_id,ingredient_id)
 );
@@ -197,7 +190,7 @@ create table product
 id int identity primary key,
 category_id int,
 [name] nvarchar(30),
-price decimal(5,3),
+price float,
 constraint FK_product_category_id 
 foreign key(category_id)
 references category(id)
@@ -228,8 +221,7 @@ create table [order]
 id int identity primary key,
 employee_id int,
 table_id int,
-date_time varchar(30),
-[state] nvarchar(25) default N'đã thanh toán',
+date_time date
 );
 go
 
@@ -261,36 +253,18 @@ go
 create table size
 (
 id int identity primary key,
-name varchar(2),
-extra_price decimal(5,3)
+[name] varchar(2),
+extra_price float
 );
 go
-
-create table product_size
-(
-id_product_size int identity primary key,
-product_id int,
-size_id int
-);
-go
-
-alter table product_size
-	add constraint FK_product_size_product_id foreign key(product_id)
-			references product(id)
-			on update cascade,
-		constraint FK_product_size_size_id foreign key(size_id)
-			references size(id)
-			on update cascade
-go
-
 create table order_detail
 (
 order_id int,
 product_id int,
-product_size_id int,
+size_id int,
 quantity int,
-price decimal(5,3),
-primary key(order_id,product_id)
+price float,
+primary key(order_id,product_id,size_id)
 );
 go
 
@@ -300,16 +274,19 @@ alter table order_detail
 			on update cascade,
 		constraint FK_order_detail_product_id foreign key(product_id)
 			references product(id)
-			on update cascade		
+			on update cascade,
+		constraint FK_order_detail_size_id foreign key(size_id)
+			references size(id)
+			on update cascade
 go
 
 
 insert into [role]([name],amount_per_hour)values
-(N'Nhân viên bán hàng',40.000),
-(N'Nhân viên phục vụ',30.000),
-(N'Quản lý',60.000),
-(N'Quản lý kho',50.000),
-(N'Admin',99.000)
+(N'Nhân viên bán hàng',40000),
+(N'Nhân viên phục vụ',30000),
+(N'Quản lý',60000),
+(N'Quản lý kho',50000),
+(N'Admin',99000)
 go
 
 
@@ -334,16 +311,11 @@ insert into employee_role(employee_id,role_id,start_job_date,quit_job_date)value
 (5,1,'20/12/2021',null),
 (6,5,'01/01/2021',null)
 go
---select * from timesheet
---insert into timesheet(full_or_part,employee_id,start_time,end_time,[date],note)values
---('full',1,'',)
 
-
-go
 insert into size([name],extra_price)
-	values ('M',0.000),
-		   ('L',5.000),
-		   ('XL',10.000);
+	values ('M',0000),
+		   ('L',5000),
+		   ('XL',10000);
 go
 insert into category([name])
 	values (N'Cà phê'),
@@ -352,41 +324,15 @@ insert into category([name])
 		   (N'Sinh tố, nước ép');
 go
 insert into product(category_id,[name],price)
-	values (1,N'Cà phê sữa',17.000),
-		   (1,N'Cà phê đen',15.000),
-		   (2,N'Trà sữa truyền thống',25.000),
-		   (2,N'Trà sữa trứng nướng',30.000),
-		   (3,N'Trà vải',30.000),
-		   (3,N'Trà táo',30.000),
-		   (4,N'Dưa hấu',30.000),
-		   (4,N'Thơm',30.000);
+	values (1,N'Cà phê sữa',17000),
+		   (1,N'Cà phê đen',15000),
+		   (2,N'Trà sữa truyền thống',25000),
+		   (2,N'Trà sữa trứng nướng',30000),
+		   (3,N'Trà vải',30000),
+		   (3,N'Trà táo',30000),
+		   (4,N'Dưa hấu',30000),
+		   (4,N'Thơm',30000);
 go 
-insert into product_size(product_id,size_id)
-	values(1,1),
-		  (1,2),
-		  (1,3),
-		  (2,1),
-		  (2,2),
-		  (2,3),
-		  (3,1),
-		  (3,2),
-		  (3,3),
-		  (4,1),
-		  (4,2),
-		  (4,3),
-		  (5,1),
-		  (5,2),
-		  (5,3),
-		  (6,1),
-		  (6,2),
-		  (6,3),
-		  (7,1),
-		  (7,2),
-		  (7,3),
-		  (8,1),
-		  (8,2),
-		  (8,3)
-go
 insert into [table](area)values
 (N'Tầng 1'),
 (N'Tầng 1'),
@@ -404,6 +350,9 @@ insert into [table](area)values
 (N'Tầng 3'),
 (N'Tầng 3')
 go
+set dateformat dmy
+go
+
 insert into [order](employee_id,table_id,date_time)values
 (1,11,'20/12/2021'),
 (2,2,'20/12/2021'),
@@ -414,13 +363,13 @@ insert into [order](employee_id,table_id,date_time)values
 (1,9,'20/12/2021')
 
 go
-insert into order_detail(order_id,product_id,product_size_id,quantity,price)values
-(1,1,1,10,17.000),
-(2,3,3,3,35.000),
-(3,4,1,5,30.000),
-(5,5,1,2,30.000),
-(6,6,3,2,40.000),
-(7,7,1,3,30.000)
+insert into order_detail(order_id,product_id,size_id,quantity,price)values
+(1,1,1,10,17000),
+(2,3,3,3,35000),
+(3,4,1,5,30000),
+(5,5,1,2,30000),
+(6,6,3,2,40000),
+(7,7,1,3,30000)
 
 go
 insert into supplier([name],phone,[address])values
@@ -444,6 +393,7 @@ insert into ingredient(ingredient_category,[name],degree)values
 (N'Nguyên liệu topping',N'Bột thạch dừa','kg'),
 (N'Phụ gia','vani','kg')
 go
+set dateformat dmy
 insert into receipt(supplier_id,[date])values
 (1,'04/02/2022'),--1
 (1,'04/02/2022'),--2
@@ -457,22 +407,22 @@ go
 
 
 insert into receipt_detail(receipt_id,ingredient_id,quanlity,price,employee_id)values
-(1,1,2,15.000,5),
-(2,2,3,22.000,1),
-(3,3,4,22.000,5),
-(4,4,1,12.000,1),
-(5,5,2,75.000,5),
-(6,6,4,57.000,5),
-(7,7,5,43.000,1),
-(8,8,8,87.000,5),
-(1,9,3,55.000,5),
-(2,10,8,19.000,5),
-(3,11,8,22.000,1),
-(4,12,2,42.000,5),
-(5,13,7,15.000,1),
-(6,14,9,42.000,5),
-(7,15,5,16.000,1),
-(8,16,1,21.000,5)
+(1,1,2,15000,5),
+(2,2,3,22000,1),
+(3,3,4,22000,5),
+(4,4,1,12000,1),
+(5,5,2,75000,5),
+(6,6,4,57000,5),
+(7,7,5,43000,1),
+(8,8,8,87000,5),
+(1,9,3,55000,5),
+(2,10,8,19000,5),
+(3,11,8,22000,1),
+(4,12,2,42000,5),
+(5,13,7,15000,1),
+(6,14,9,42000,5),
+(7,15,5,16000,1),
+(8,16,1,21000,5)
 go
 
 insert into recipe(product_id,ingredient_id,quanlity)values
@@ -486,4 +436,5 @@ insert into recipe(product_id,ingredient_id,quanlity)values
 (6,5,0.2),
 (7,7,0.2),
 (8,8,0.2)
+
 
