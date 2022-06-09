@@ -176,13 +176,13 @@ public class AddMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         service.addMenu(String.valueOf(jComboBox1.getSelectedItem()),jTextField2.getText(),Float.valueOf(String.valueOf(jTextField3.getText())));
         this.dispose();
-        new Coffee_management_general(2).setVisible(true);
+       
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
         this.dispose();
-        new Coffee_management_general(2).setVisible(true);
+        
     }//GEN-LAST:event_jLabel6MouseClicked
 
     /**
